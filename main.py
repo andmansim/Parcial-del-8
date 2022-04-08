@@ -1,40 +1,12 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
-
-
-"""
-This Python method contains the application of the Game.
-
-@contents :  This module contains the complete implementation of the application
-             of the Game.
-@project :  N/A
-@program :  N/A
-@file :  main.py
-@author :  Antonio Artes Garcia (antonio.artesgarcia@ceu.es)
-           Francisco Hernando Gallego (francisco.hernandogallego@ceu.es)
-           Ruben Juarez Cadiz (ruben.juarezcadiz@ceu.es)
-
-@version :  0.0.1, 08 November 2021
-@information :  The Zen of Python
-                  https://www.python.org/dev/peps/pep-0020/
-                Style Guide for Python Code
-                  https://www.python.org/dev/peps/pep-0008/
-                Example NumPy Style Python Docstrings
-                  http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
-                doctest – Testing through documentation
-                  https://pymotw.com/2/doctest/
-
-@copyright :  Copyright 2021 GNU AFFERO GENERAL PUBLIC.
-              All rights are reserved. Reproduction in whole or in part is
-              prohibited without the written consent of the copyright owner.
-"""
-
-
-# Source packages.
-
-
-
+import csv
+lista = []
 def get_data_from_user(name_file):
+      with (name_file) as file:
+        leer = csv.DictReader(file, delimiter = ',')
+        for i in leer:
+          lista.append(i)
+        return lista
+              
     """Function to obtain data from each user.
 
     This function obtains data from each user in order to set the configuration
