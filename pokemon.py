@@ -17,6 +17,7 @@ def errores(vida, ataque, defensa):
         raise Errorataque 
     if defensa < 1 or defensa > 10:
         raise Errordefensa 
+    
 class Pokemon():
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         self.ID = ID
