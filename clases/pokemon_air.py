@@ -1,39 +1,13 @@
 from pokemon import Pokemon
 from clases.weapon_type import WeaponType
 
-class PokemonAir():
-    """Python class to implement a basic version of a Pokemon of the game.
+class PokemonAir(Pokemon):
+    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
+        super().__init__(ID, nombre, arma, vida, ataque, defensa)
+    
+ 
+obj_Pokemon = PokemonAir(1, "Pidgey", WeaponType.PUNCH, 100, 7, 10)
 
-    This Python class implements the basic version of a Pokemon of the game.
-
-    Syntax
-    ------
-      obj = PokemonAir(id, pokemon_name, weapon_type, health_points,
-                         attack_rating, defense_rating)
-
-    Parameters
-    ----------
-      [in] id ID of the Pokemon.
-      [in] pokemon_name Name of the Pokemon.
-      [in] weapon_type Type of weapon that carries out the Pokemon.
-      [in] health_points Points of health that the Pokemon has.
-      [in] attack_rating Attack rating of the Pokemon.
-      [in] defense_rating Defense rating of the Pokemon.
-
-    Returns
-    -------
-      obj Python object output parameter that represents an instance
-          of the class Pokemon.
-
-    Attributes
-    ----------
-
-    Example
-    -------
-      >>> from pokemon import Pokemon
-      >>> from weapon_type import WeaponType
-      >>> obj_Pokemon = PokemonEarth(1, "Pidgey", WeaponType.PUNCH, 100, 7, 10)
-    """
     
 def main():
     """Function main of the module.
