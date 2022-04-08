@@ -1,16 +1,19 @@
 import csv
+
 lista = []
-def get_data_from_user(name_file, lista):
-  with ('coach_2_pokemons.csv') as file:
-    leer = csv.DictReader(file, delimiter = ',')
-    for i in leer:
-      lista.append(i)
+def get_data_from_user(nombre):
+  
+  with (nombre, 'r') as file:
+    reader = csv.reader(file)
+    for row in reader:
+        
+     lista.append(row)
     return lista
               
-get_data_from_user('coach_2_pokemons.csv', lista)
+get_data_from_user('coach_1_pokemons.csv', lista)
 print(lista)
-
-
+def get_data_from_user(lista):
+      with open
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
     """Function to know the list of Pokemons that are associated to the Coach.
 
