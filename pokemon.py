@@ -53,6 +53,12 @@ class Pokemon():
     
     def __del__(self):
         Pokemon.__lista_ID.remove(self.ID)
+        
+    def estas_vivo(self):
+        if self.vida > 0:
+            print('El pokemon está vivo')
+        else:
+            print('Tu pokemon está muerto')
             
    
 
