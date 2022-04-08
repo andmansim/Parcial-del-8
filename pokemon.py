@@ -31,7 +31,11 @@ class Pokemon():
         else:
             raise TypeError('El nombre tiene que ser un string')
         
-            
+        if self.arma in armas:
+            print("El arma " + self.arma + " es válida")
+        else:
+            raise TypeError('Np es posible esa arma')
+          
             
    
 
