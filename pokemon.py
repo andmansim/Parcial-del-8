@@ -39,13 +39,17 @@ class Pokemon():
         if 1 <= int(self.vida) <= 100:
             print('La salud del pokemon ' + self.nombre + ' no es cero')
         else:
-            raise TypeError('La vida tiene que ser un integrer y estar entre 1 y 10')  
+            raise TypeError('La vida tiene que ser un integrer y estar entre 1 y 100')  
         
         if 1 <= int(self.ataque) <= 10:
             print('El pokemon ' + self.nombre + ' tiene ' + self.ataque + ' de ataque')
         else:
             raise TypeError ('El ataque tiene que ser un integrer y estar entre 1 y 10')
         
+        if 1 <= int(self.defensa) < 10:
+            print('La defensa del pokemon ' + self.nombre + ' es ' + self.defensa)
+        else:
+            raise TypeError('La defensa tiene que ser un integrer y estar entre 1 y 10')
             
    
 
