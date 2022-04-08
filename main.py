@@ -7,7 +7,7 @@ def get_data_from_user(name_file):
           lista.append(i)
         return lista
               
-    """Function to obtain data from each user.
+  """Function to obtain data from each user.
 
     This function obtains data from each user in order to set the configuration
     of the Game.
@@ -28,7 +28,7 @@ def get_data_from_user(name_file):
     -------
       >>> list_pokemons = get_data_from_user("file.csv")
     """
-
+get_data_from_user('coach_2_pokemons.csv')
 
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
