@@ -5,7 +5,18 @@ from cmd import IDENTCHARS
 from clases.weapon_type import WeaponType
 from pokemon import Pokemon
 
+class Errorvida(BaseException):
+    pass
+class Errorataque(BaseException): pass
+class Errordefensa(BaseException): pass
 
+def errores(vida, ataque, defensa):
+    if vida > 100 or vida < 1:
+        raise Errorvida
+    if ataque < 1 or ataque > 10:
+        raise Errorataque 
+    if defensa < 1 or defensa > 10:
+        raise Errordefensa 
 class Pokemon():
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         self.ID = ID
@@ -14,40 +25,22 @@ class Pokemon():
         self.vida = vida
         self.ataque = ataque
         self.defensa = defensa
+    def comprobaciones (self):
+        try:
+            1 < self.vida < 100
+            1 < self.ataque <10
+            1 < self.defensa <10
+            errores(self.vida, self.ataque, self.defensa)
+        except Errorvida:
+            print("La vida tiene que estar entre 1 y 100")
+        except Errorataque:
+            print("El ataque tiene que estar entre 1 y 10")
+        except Errordefensa:
+            print("La defensa tiene que estar entre 1 y 10")
         
-    """Python class to implement a basic version of a Pokemon of the game.
-
-    This Python class implements the basic version of a Pokemon of the game.
-
-    Syntax
-    ------
-      obj = Pokemon(id, pokemon_name, weapon_type, health_points,
-                   attack_rating, defense_rating)
-
-    Parameters
-    ----------
-      [in] id ID of the Pokemon.
-      [in] pokemon_name Name of the Pokemon.
-      [in] weapon_type Type of weapon that carries out the Pokemon.
-      [in] health_points Points of health that the Pokemon has.
-      [in] attack_rating Attack rating of the Pokemon.
-      [in] defense_rating Defense rating of the Pokemon.
-
-    Returns
-    -------
-      obj Python object output parameter that represents an instance
-          of the class Pokemon.
-
-    Attributes
-    ----------
-
-    Example
-    -------
-      >>> from pokemon import Pokemon
-      >>> from weapon_type import WeaponType
-      >>> obj_Pokemon = Pokemon(1, "Bulbasaur", WeaponType.PUNCH, 100, 7, 10)
-    """
-
+            
+            
+   
 
 
 
