@@ -1,11 +1,20 @@
 
 
 # Source packages.
+from cmd import IDENTCHARS
 from weapon_type import WeaponType
 from pokemon import Pokemon
 
 
 class Pokemon():
+    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
+        self.ID = ID
+        self.nombre = nombre
+        self.arma = arma
+        self.vida = vida
+        self.ataque = ataque
+        self.defensa = defensa
+        
     """Python class to implement a basic version of a Pokemon of the game.
 
     This Python class implements the basic version of a Pokemon of the game.
