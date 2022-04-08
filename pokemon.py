@@ -59,6 +59,11 @@ class Pokemon():
             print('El pokemon está vivo')
         else:
             print('Tu pokemon está muerto')
+    
+    def descripcion_pokemon(self):
+        print('INFORMACIÓN DE LOS POKEMON')
+        print('Pokemon ID: ' + self.ID + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + self.vida + ' de vida'
+              + ', una fuerza de ataque ' + self.ataque + ' y una defensa de ' + self.defensa)
             
    
 
