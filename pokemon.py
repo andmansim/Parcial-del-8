@@ -20,13 +20,16 @@ class Pokemon():
         if self.ID.isdigit():
             if self.ID is not Pokemon.__lista_ID:
                 Pokemon.__lista_ID.append(self.ID)
-                print("Pokemon" + self.nombre + 'se añade a la lista')
+                print("Pokemon " + self.nombre + ' se añade a la lista')
             else:
                 print('Ya has elegido este pokemon')
         else: 
             raise TypeError('El ID tiene que ser un integrer')
         
-        
+        if isinstance(self.nombre, str):
+            print('Nombre del pokemon ' + self.nombre + ' es válido')
+        else:
+            raise TypeError('El nombre tiene que ser un string')
         
             
             
