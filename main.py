@@ -3,14 +3,15 @@ import csv
 lista = []
 def get_data_from_user(nombre, lista):
   
-  with (nombre, 'r') as file:
+  with open(nombre, 'r') as file:
     reader = csv.reader(file)
+    
     for row in reader:
         
      lista.append(row)
     return lista
               
-get_data_from_user('coach_1_pokemons.csv', lista)
+get_data_from_user('pokemon1.csv', lista)
 print(lista)
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
