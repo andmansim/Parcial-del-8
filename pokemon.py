@@ -50,6 +50,9 @@ class Pokemon():
             print('La defensa del pokemon ' + self.nombre + ' es ' + self.defensa)
         else:
             raise TypeError('La defensa tiene que ser un integrer y estar entre 1 y 10')
+    
+    def __del__(self):
+        Pokemon.__lista_ID.remove(self.ID)
             
    
 
