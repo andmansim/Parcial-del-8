@@ -65,7 +65,7 @@ class Pokemon():
         print('Pokemon ID: ' + self.ID + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + self.vida + ' de vida'
               + ', una fuerza de ataque ' + self.ataque + ' y una defensa de ' + self.defensa)
             
-   
+ 
 
 
 

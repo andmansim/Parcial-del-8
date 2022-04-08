@@ -1,4 +1,5 @@
 import csv
+from pokemon import Pokemon
 lista = []
 lista1 = []
 def get_data_from_user(nombre, lista):
