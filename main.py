@@ -1,5 +1,6 @@
 import csv
 lista = []
+lista1 = []
 def get_data_from_user(nombre, lista):
    with open(nombre) as file:
       leer = csv.DictReader(file, delimiter = ',')
@@ -8,12 +9,17 @@ def get_data_from_user(nombre, lista):
    
       return lista
 
+def separar (listas):
+       
+   for x in range(len(listas)):
+      print(listas[x])
+
          
 get_data_from_user('pokemon1.csv', lista)
+separar(lista)
+get_data_from_user('pokemon2.csv', lista1)
+separar(lista1)
 
-for x in range(len(lista)):
-   print(lista[x])
-print(lista)
 
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
