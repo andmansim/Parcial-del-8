@@ -5,10 +5,14 @@ def get_data_from_user(nombre, lista):
       leer = csv.DictReader(file, delimiter = ',')
       for i in leer:
          lista.append(i)
+   
       return lista
 
-              
+         
 get_data_from_user('pokemon1.csv', lista)
+
+for x in range(len(lista)):
+   print(lista[x])
 print(lista)
 
 
