@@ -7,6 +7,7 @@ from pokemon import Pokemon
 
 
 class Pokemon():
+    __lista_ID = []
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         self.ID = ID
         self.nombre = nombre
@@ -16,7 +17,16 @@ class Pokemon():
         self.defensa = defensa
         armas = ["patada", "puñetazo", "codazo", "cabezazo"]
         print("Comprobaciones")
-        if self.ID.isdigit()
+        if self.ID.isdigit():
+            if self.ID is not Pokemon.__lista_ID:
+                Pokemon.__lista_ID.append(self.ID)
+                print("Pokemon" + self.nombre + 'se añade a la lista')
+            else:
+                print('Ya has elegido este pokemon')
+        else: 
+            raise TypeError('El ID tiene que ser un integrer')
+        
+        
         
             
             
