@@ -1,34 +1,14 @@
 import csv
 lista = []
-def get_data_from_user(name_file):
-      with (name_file) as file:
-        leer = csv.DictReader(file, delimiter = ',')
-        for i in leer:
-          lista.append(i)
-        return lista
+def get_data_from_user(name_file, lista):
+  with ('coach_2_pokemons.csv') as file:
+    leer = csv.DictReader(file, delimiter = ',')
+    for i in leer:
+      lista.append(i)
+    return lista
               
-  """Function to obtain data from each user.
-
-    This function obtains data from each user in order to set the configuration
-    of the Game.
-
-    Syntax
-    ------
-      [ ] = get_data_from_user(name_file)
-
-    Parameters
-    ----------
-      name_file str Name of the CSV file.
-
-    Returns
-    -------
-      list_pokemons List of Pokemons obtained from CSV .
-
-    Example
-    -------
-      >>> list_pokemons = get_data_from_user("file.csv")
-    """
-get_data_from_user('coach_2_pokemons.csv')
+get_data_from_user('coach_2_pokemons.csv', lista)
+print(lista)
 
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
