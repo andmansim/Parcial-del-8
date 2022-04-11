@@ -1,7 +1,6 @@
 #from clases.weapon_type import WeaponType
 #from pokemon import Pokemon
 
-
 class Pokemon():
     __lista_ID = []
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):

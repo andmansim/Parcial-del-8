@@ -1,5 +1,6 @@
 import csv
 
+
 lista = []
 lista1 = []
 def get_data_from_user(nombre, lista):
@@ -16,19 +17,38 @@ def separar (listas):
       print(listas[x])
 
          
-get_data_from_user('pokemon1.csv', lista)
+get_data_from_user('jugador1.csv', lista)
 separar(lista)
-get_data_from_user('pokemon2.csv', lista1)
+get_data_from_user('jugador2.csv', lista1)
 separar(lista1)
 
 
-l_pokemon = []
-def lista_nombre_pokemon(listas, l_pokemon):
-   for u in listas:
-      pok = u['Nombre']
-      l_pokemon.append(pok)
-   return l_pokemon
 
+def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
+    """Function to know the list of Pokemons that are associated to the Coach.
+
+    This function is used in order to know the list of Pokemos that are
+    associated to the coach. This function prints the result of this list, so
+    the user can select a Pokemon.
+
+    Syntax
+    ------
+       [ ] = get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
+
+    Parameters
+    ----------
+       [in] coach_to_ask Coach to ask for her/his list of Pokemons.
+       [in] list_of_pokemons List of the Pokemons that are associated to the
+                             coach.
+
+    Returns
+    -------
+       List List of the Pokemons associaated to the coach that are undefeated.
+
+    Example
+    -------
+       >>> get_pokemon_in_a_list_of_pokemons(1, list_of_pokemons)
+    """
 
 
 
