@@ -11,7 +11,7 @@ class Pokemon():
         self.ataque = ataque
         self.defensa = defensa
         armas = ["patada", "puñetazo", "codazo", "cabezazo"]
-        print("Comprobaciones")
+        print("--------------Comprobaciones------------------")
         
         if isinstance(self.ID, int):
             if self.ID is not Pokemon.__lista_ID:
