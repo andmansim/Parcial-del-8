@@ -1,10 +1,11 @@
 from weapon_type import TipoArma
 from enum import Enum
 class TipoArma(Enum):
-    Puñetazo = 1
-    Cabezazo = 2
-    Patada =  3
-    Codazo = 4
+    #Valor de ataque
+    Puñetazo = 5
+    Cabezazo = 8
+    Patada =  12
+    Codazo = 9
 
 
 

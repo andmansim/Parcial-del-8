@@ -13,7 +13,7 @@ class Pokemon():
         armas = ["patada", "puñetazo", "codazo", "cabezazo"]
         print("Comprobaciones")
         
-        if self.ID.isdigit():
+        if isinstance(self.ID, int):
             if self.ID is not Pokemon.__lista_ID:
                 Pokemon.__lista_ID.append(self.ID)
                 print("Pokemon " + self.nombre + ' se añade a la lista')
@@ -38,12 +38,12 @@ class Pokemon():
             raise TypeError('La vida tiene que ser un integrer y estar entre 1 y 100')  
         
         if 1 <= int(self.ataque) <= 10:
-            print('El pokemon ' + self.nombre + ' tiene ' + self.ataque + ' de ataque')
+            print('El pokemon ' + self.nombre + ' tiene ' + str(self.ataque) + ' de ataque')
         else:
             raise TypeError ('El ataque tiene que ser un integrer y estar entre 1 y 10')
         
         if 1 <= int(self.defensa) < 10:
-            print('La defensa del pokemon ' + self.nombre + ' es ' + self.defensa)
+            print('La defensa del pokemon ' + self.nombre + ' es ' + str(self.defensa))
         else:
             raise TypeError('La defensa tiene que ser un integrer y estar entre 1 y 10')
     
@@ -51,19 +51,19 @@ class Pokemon():
         Pokemon.__lista_ID.remove(self.ID)
         
     def estas_vivo(self):
-        if self.vida > 0:
+        if int(self.vida) > 0:
             print('El pokemon está vivo')
         else:
             print('Tu pokemon está muerto')
     
     def descripcion_pokemon(self):
         print('INFORMACIÓN DE LOS POKEMON')
-        print('Pokemon ID: ' + self.ID + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + self.vida + ' de vida'
-              + ', una fuerza de ataque ' + self.ataque + ' y una defensa de ' + self.defensa)
+        print('Pokemon ID: ' + str(self.ID) + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + str(self.vida) + ' de vida'
+              + ', una fuerza de ataque ' + str(self.ataque) + ' y una defensa de ' + str(self.defensa))
             
  
-
-
+pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
+pokemon.descripcion_pokemon
 
 
 def main():
@@ -89,7 +89,7 @@ def main():
       >>> main()
     """
 
-    print("=================================================================.")
+'''  print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
     pokemon_1 = Pokemon(1, "Ivysaur", WeaponType.HEADBUTT, 100, 8, 9)
@@ -177,7 +177,7 @@ def main():
         if pokemon_6.get_health_points() == 99:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method fight_attack().")
+            print("Test FAIL. Check the method fight_attack().")'''
 
 
 
