@@ -102,28 +102,7 @@ pokemon.descripcion_pokemon
 pokemon.ataque_pokemon(pokemon1)'''
 
 def main():
-    """Function main of the module.
-
-    The function main of this module is used to test the Class that is described
-    in this module.
-
-    Syntax
-    ------
-      [ ] = main()
-
-    Parameters
-    ----------
-      Null .
-
-    Returns
-    -------
-      Null .
-
-    Example
-    -------
-      >>> main()
-    """
-
+    
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
@@ -167,16 +146,16 @@ def main():
     else:
         print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
 
-'''
+
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.Patada, 97, 8, 9)
+    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.PATADA, 97, 8, 9)
 
     if pokemon_3.estas_vivo():
         pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
 
-        if not pokemon_3.is_alive():
+        if not pokemon_3.estas_vivo():
             print("Test PASS. The method is_alive() has been implemented correctly.")
         else:
             print("Test FAIL. Check the method is_alive().")
@@ -187,7 +166,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.Codazo, 93, 9, 6)
+    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.CODAZO, 93, 9, 6)
 
     pokemon_4.fight_defense(70)
 
@@ -200,27 +179,24 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUNCH, 99, 10, 7)
-    pokemon_6 = Pokemon(6, "Charmeleon", TipoArma.PUNCH, 99, 9, 8)
+    pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUÑETAZO, 99, 10, 7)
+    pokemon_6 = Pokemon(6, "Charmeleon", TipoArma.PUÑETAZO, 99, 9, 8)
 
     pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
 
     if pokemon_was_hit:
-        if pokemon_6.get_health_points() == 97:
+        if pokemon_6.get_salud() == 97:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
             print("Test FAIL. Check the method fight_attack().")
     else:
-        if pokemon_6.get_health_points() == 99:
+        if pokemon_6.get_salud() == 99:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method fight_attack().")'''
+            print("Test FAIL. Check the method fight_attack().")
 
 
 
 # Checking whether this module is executed just itself alone.
 if __name__ == "__main__":
     main()
-
-
-# EOF
