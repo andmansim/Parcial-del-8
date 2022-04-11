@@ -88,7 +88,7 @@ def main():
     pokemon_5 = PokemonWater(5, "Squirtle", TipoArma.PUÑETAZO, 99, 20, 10)
     pokemon_6 = PokemonWater(6, "Squirtle", TipoArma.PUÑETAZO, 99, 18, 9)
 
-    pokemon_was_hit = pokemon_6.ataque_pokemon(pokemon_5)
+    pokemon_was_hit = pokemon_5.ataque_pokemon(pokemon_6)
 
     if pokemon_was_hit:
         if pokemon_6.get_salud() == 88:
