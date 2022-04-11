@@ -1,11 +1,11 @@
-from weapon_type import WeaponType
+from weapon_type import TipoArma
 from enum import Enum
-class WeaponType(Enum):
-      Puñetazo = 1
-      Cabezazo = 2
-      Patada = 3
-      Codazo = 4
-    
+class TipoArma(Enum):
+    Puñetazo = 1
+    Cabezazo = 2
+    Patada =  3
+    Codazo = 4
+
 
 
 

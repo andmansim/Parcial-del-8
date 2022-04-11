@@ -12,6 +12,7 @@ class Pokemon():
         self.defensa = defensa
         armas = ["patada", "puñetazo", "codazo", "cabezazo"]
         print("Comprobaciones")
+        
         if self.ID.isdigit():
             if self.ID is not Pokemon.__lista_ID:
                 Pokemon.__lista_ID.append(self.ID)
