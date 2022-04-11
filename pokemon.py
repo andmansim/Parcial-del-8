@@ -10,7 +10,7 @@ class Pokemon():
         self.vida = vida
         self.ataque = ataque
         self.defensa = defensa
-        armas = ["patada", "puñetazo", "codazo", "cabezazo"]
+        
         print("--------------Comprobaciones------------------")
         
         if isinstance(self.ID, int):
@@ -22,10 +22,7 @@ class Pokemon():
         else: 
             raise TypeError('El ID tiene que ser un integrer')
         
-        if isinstance(self.nombre, str):
-            print('Nombre del pokemon ' + self.nombre + ' es válido')
-        else:
-            raise TypeError('El nombre tiene que ser un string')
+
         
         if isinstance(self.arma, TipoArma):
             
@@ -65,8 +62,12 @@ class Pokemon():
     
     def get_arma(self):
         return self.arma
-    def set(self): #De momento no los necesito. 
-        pass
+    
+    def set_nombre(self): #De momento no los necesito. 
+        if isinstance(self.nombre, str):
+            print('Nombre del pokemon ' + self.nombre + ' es válido')
+        else:
+            raise TypeError('El nombre tiene que ser un string')
     
     def estas_vivo(self):
         if int(self.vida) > 0:
