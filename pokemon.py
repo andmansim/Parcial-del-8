@@ -1,4 +1,4 @@
-#from clases.weapon_type import WeaponType
+#from clases.weapon_type import TipoArma
 #from pokemon import Pokemon
 
 class Pokemon():
@@ -72,15 +72,19 @@ class Pokemon():
         else:
             return True 
     
-    def ataque_pokemon(self, a_p, d_p):
-        if Pokemon.defensa_pokemon == False:
+    def ataque_pokemon(self, a_p):
+        if pokemon.defensa_pokemon(a_p.defensa) == False:
             return False
         else:
+            
+            self.vida = self.vida - a_p.ataque
+            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + self.vida + ' de vida')
             return True #ha atacado
     
 pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
+pokemon1 = Pokemon(11,'Pikachu','cabezazo',69,8,8)
 pokemon.descripcion_pokemon
-
+print(pokemon.ataque_pokemon(pokemon1))
 
 def main():
     """Function main of the module.
