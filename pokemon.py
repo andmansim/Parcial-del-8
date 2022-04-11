@@ -68,10 +68,16 @@ class Pokemon():
             
     def defensa_pokemon(self, daño):
         if self.defensa >= daño:
+            return False #no ha recibido daño
+        else:
+            return True 
+    
+    def ataque_pokemon(self, a_p, d_p):
+        if Pokemon.defensa_pokemon == False:
             return False
         else:
-            return True
-        
+            return True #ha atacado
+    
 pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
 pokemon.descripcion_pokemon
 
