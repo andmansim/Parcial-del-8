@@ -1,4 +1,4 @@
-from weapon_type import TipoArma
+
 from enum import Enum
 class TipoArma(Enum):
     #Valor de ataque

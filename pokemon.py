@@ -1,4 +1,4 @@
-#from clases.weapon_type import TipoArma
+from clases.weapon_type import TipoArma
 #from pokemon import Pokemon
 
 class Pokemon():
@@ -62,7 +62,7 @@ class Pokemon():
             print('Tu pokemon está muerto')
     
     def descripcion_pokemon(self):
-        print('INFORMACIÓN DE LOS POKEMON')
+        print('--------------INFORMACIÓN DE LOS POKEMON----------------')
         print('Pokemon ID: ' + str(self.ID) + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + str(self.vida) + ' de vida'
               + ', una fuerza de ataque ' + str(self.ataque) + ' y una defensa de ' + str(self.defensa))
             
@@ -83,8 +83,8 @@ class Pokemon():
             print('Vida restante de ' + self.nombre + ' es ' + str(self.vida))
             return True #ha atacado
     
-pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
-pokemon1 = Pokemon(11,'Pikachu','cabezazo',69,8,8)
+pokemon = Pokemon(24,'Diglett',TipoArma.Puñetazo,82,9,7)
+pokemon1 = Pokemon(11,'Pikachu',TipoArma.Cabezazo,69,8,8)
 pokemon.descripcion_pokemon
 pokemon.ataque_pokemon(pokemon1)
 
@@ -111,10 +111,10 @@ def main():
       >>> main()
     """
 
-'''  print("=================================================================.")
+    print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = Pokemon(1, "Ivysaur", WeaponType.HEADBUTT, 100, 8, 9)
+    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.HEADBUTT, 100, 8, 9)
 
     if pokemon_1.get_pokemon_name() == "Ivysaur":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
@@ -145,7 +145,7 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = Pokemon(2, "Charmander", WeaponType.HEADBUTT, 100, 7, 10)
+    pokemon_2 = Pokemon(2, "Charmander", TipoArma.HEADBUTT, 100, 7, 10)
 
     if str(pokemon_2) == "Pokemon ID 2 with name Charmander has as weapon HEADBUTT and health 100":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
@@ -156,7 +156,7 @@ def main():
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = Pokemon(3, "Wartortle", WeaponType.KICK, 97, 8, 9)
+    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.KICK, 97, 8, 9)
 
     if pokemon_3.is_alive():
         pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
@@ -172,7 +172,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = Pokemon(4, "Squirtle", WeaponType.ELBOW, 93, 9, 6)
+    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.ELBOW, 93, 9, 6)
 
     pokemon_4.fight_defense(70)
 
@@ -185,8 +185,8 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = Pokemon(5, "Venusaur", WeaponType.PUNCH, 99, 10, 7)
-    pokemon_6 = Pokemon(6, "Charmeleon", WeaponType.PUNCH, 99, 9, 8)
+    pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUNCH, 99, 10, 7)
+    pokemon_6 = Pokemon(6, "Charmeleon", TipoArma.PUNCH, 99, 9, 8)
 
     pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
 
@@ -199,7 +199,7 @@ def main():
         if pokemon_6.get_health_points() == 99:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method fight_attack().")'''
+            print("Test FAIL. Check the method fight_attack().")
 
 
 
