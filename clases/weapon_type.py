@@ -12,7 +12,7 @@ class TipoArma(Enum):
 def main():
     """Function main of the module.
 
-    The function main of this module is used to test the Class WeaponType.
+    The function main of this module is used to test the Class TipoArma.
 
     Syntax
     ------
@@ -32,49 +32,49 @@ def main():
     """
 
     print("=================================================================.")
-    print("Test Case 1: Check Class WeaponType - Name.")
+    print("Test Case 1: Check Class TipoArma - Name.")
     print("=================================================================.")
 
-    if isinstance(WeaponType.PUNCH, WeaponType):
+    if isinstance(TipoArma.PUNCH, TipoArma):
         print("Test PASS. The enum for Punch has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.KICK, WeaponType):
+    if isinstance(TipoArma.KICK, TipoArma):
         print("Test PASS. The enum for Kick has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.ELBOW, WeaponType):
+    if isinstance(TipoArma.ELBOW, TipoArma):
         print("Test PASS. The enum for Elbow has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if isinstance(WeaponType.HEADBUTT, WeaponType):
+    if isinstance(TipoArma.HEADBUTT, TipoArma):
         print("Test PASS. The enum for Head Butt has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
     print("=================================================================.")
-    print("Test Case 2: Check Class WeaponType - Value.")
+    print("Test Case 2: Check Class TipoArma - Value.")
     print("=================================================================.")
 
-    if WeaponType.PUNCH.value == 2:
+    if TipoArma.PUNCH.value == 2:
         print("Test PASS. The enum for Punch has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.KICK.value == 4:
+    if TipoArma.KICK.value == 4:
         print("Test PASS. The enum for Kick has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.ELBOW.value == 6:
+    if TipoArma.ELBOW.value == 6:
         print("Test PASS. The enum for Elbow has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if WeaponType.HEADBUTT.value == 10:
+    if TipoArma.HEADBUTT.value == 10:
         print("Test PASS. The enum for Head Butt has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
