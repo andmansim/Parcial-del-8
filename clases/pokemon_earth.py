@@ -1,9 +1,13 @@
 from pokemon import Pokemon
+from weapon_type import TipoArma
 
 class PokemonEarth(Pokemon):
    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
-       super().__init__(ID, nombre, arma, vida, ataque, defensa)
-       if isinstance(self.defensa, )
+        super().__init__(ID, nombre, arma, vida, ataque, defensa)
+        if 11 <= int(self.defensa) <= 20:
+            print('La defensa del pokemon ' + self.nombre + ' es ' + str(self.defensa))
+        else:
+            raise TypeError('La defensa tiene que ser un integrer y estar entre 11 y 20')
 
 def main():
     """Function main of the module.
