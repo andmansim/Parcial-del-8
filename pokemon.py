@@ -27,7 +27,7 @@ class Pokemon():
         else:
             raise TypeError('El nombre tiene que ser un string')
         
-        if self.arma in armas:
+        if isinstance(self.arma, TipoArma):
             print("El arma " + self.arma + " es válida")
         else:
             raise TypeError('Np es posible esa arma')
@@ -61,6 +61,9 @@ class Pokemon():
     
     def get_salud(self):
         return self.vida
+    
+    def get_arma(self):
+        return self.arma
     def set(self): #De momento no los necesito. 
         pass
     
