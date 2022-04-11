@@ -1,12 +1,23 @@
 from pokemon import Pokemon
+import random
 from weapon_type import TipoArma
 
 class PokemonAir(Pokemon):
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, defensa)
     
- 
-obj_Pokemon = PokemonAir(1, "Pidgey", TipoArma.PUNCH, 100, 7, 10)
+    def defensa_pokemon(self, daño):
+        n = random.randint(1,2)
+        if n == 1:
+            
+            if self.defensa >= daño:
+                return False #no ha recibido daño
+            else:
+                self.vida = self.vida - (daño - self.defensa) 
+                return True 
+        else: 
+            return False
+    
 
     
 def main():
