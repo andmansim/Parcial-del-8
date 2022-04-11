@@ -1,6 +1,3 @@
-
-
-# Source packages.
 from cmd import IDENTCHARS
 from clases.weapon_type import WeaponType
 from pokemon import Pokemon

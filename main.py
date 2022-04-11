@@ -9,17 +9,14 @@ def get_data_from_user(nombre, lista):
          lista.append(i)
    
       return lista
-
-def separar (listas):
-       
-   for x in range(len(listas)):
-      print(listas[x])
-
+  
+for x in range(len(lista)):
+   print(lista[x])
          
 get_data_from_user('pokemon1.csv', lista)
-separar(lista)
+
 get_data_from_user('pokemon2.csv', lista1)
-separar(lista1)
+
 
 
 
