@@ -3,8 +3,9 @@ from weapon_type import TipoArma
 
 class PokemonEarth(Pokemon):
    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
-        super().__init__(ID, nombre, arma, vida, ataque, defensa)
-        if 11 <= int(self.defensa) <= 20:
+        super().__init__(ID, nombre, arma, vida, ataque, 10)
+        if 11 <= int(defensa) <= 20:
+            self.defensa = defensa
             print('La defensa del pokemon ' + self.nombre + ' es ' + str(self.defensa))
         else:
             raise TypeError('La defensa tiene que ser un integrer y estar entre 11 y 20')
@@ -67,8 +68,8 @@ def main():
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
     pokemon_2 = PokemonEarth(7, "Diglett", TipoArma.CABEZAZO, 100, 7, 12)
-
-    if str(pokemon_2) == "Pokemon ID 7 with name Diglett has as weapon CABEZAZO and health 100":
+ 
+    if pokemon_2.descripcion_pokemon() == "Pokemon ID: 7 se llama Diglett, su arma es: CABEZAZO, tiene 100 de vida, una fuerza de ataque 7 y una defensa de 12":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
     else:
         print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
@@ -106,8 +107,8 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = PokemonEarth(5, "Diglett", TipoArma.PUNCH, 99, 10, 20)
-    pokemon_6 = PokemonEarth(6, "Diglett", TipoArma.PUNCH, 99, 9, 18)
+    pokemon_5 = PokemonEarth(5, "Diglett", TipoArma.PATADA, 99, 10, 20)
+    pokemon_6 = PokemonEarth(6, "Diglett", TipoArma.PATADA, 99, 9, 18)
 
     pokemon_was_hit = pokemon_6.ataque_pokemon(pokemon_5)
 

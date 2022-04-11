@@ -10,7 +10,7 @@ class Pokemon():
         self.vida = vida
         self.ataque = ataque
         self.defensa = defensa
-        armas = ["patada", "puñetazo", "codazo", "cabezazo"]
+        
         print("--------------Comprobaciones------------------")
         
         if isinstance(self.ID, int):
