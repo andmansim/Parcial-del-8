@@ -1,12 +1,12 @@
 from pokemon import Pokemon
-from clases.weapon_type import TipoArma
+from weapon_type import TipoArma
 
 class PokemonAir(Pokemon):
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, defensa)
     
  
-obj_Pokemon = PokemonAir(1, "Pidgey", WeaponType.PUNCH, 100, 7, 10)
+obj_Pokemon = PokemonAir(1, "Pidgey", TipoArma.PUNCH, 100, 7, 10)
 
     
 def main():
@@ -35,7 +35,7 @@ def main():
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = PokemonAir(1, "Pidgey", WeaponType.HEADBUTT, 100, 8, 7)
+    pokemon_1 = PokemonAir(1, "Pidgey", TipoArma.HEADBUTT, 100, 8, 7)
 
     if pokemon_1.get_pokemon_name() == "Pidgey":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
@@ -66,7 +66,7 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = PokemonAir(7, "Pidgey", WeaponType.HEADBUTT, 100, 7, 6)
+    pokemon_2 = PokemonAir(7, "Pidgey", TipoArma.HEADBUTT, 100, 7, 6)
 
     if str(pokemon_2) == "Pokemon ID 7 with name Pidgey has as weapon HEADBUTT and health 100":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
@@ -77,7 +77,7 @@ def main():
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = PokemonAir(3, "Pidgey", WeaponType.KICK, 97, 8, 7)
+    pokemon_3 = PokemonAir(3, "Pidgey", TipoArma.KICK, 97, 8, 7)
 
     if pokemon_3.is_alive():
         pokemon_was_hit = pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
@@ -100,7 +100,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = PokemonAir(4, "Pidgey", WeaponType.ELBOW, 93, 9, 5)
+    pokemon_4 = PokemonAir(4, "Pidgey", TipoArma.ELBOW, 93, 9, 5)
 
     pokemon_was_hit = pokemon_4.fight_defense(70)
 
@@ -119,8 +119,8 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = PokemonAir(5, "Pidgey", WeaponType.PUNCH, 99, 10, 8)
-    pokemon_6 = PokemonAir(6, "Pidgey", WeaponType.PUNCH, 99, 9, 6)
+    pokemon_5 = PokemonAir(5, "Pidgey", TipoArma.PUNCH, 99, 10, 8)
+    pokemon_6 = PokemonAir(6, "Pidgey", TipoArma.PUNCH, 99, 9, 6)
 
     pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
 

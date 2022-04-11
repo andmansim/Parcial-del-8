@@ -109,7 +109,7 @@ def main():
     pokemon_5 = PokemonEarth(5, "Diglett", TipoArma.PUNCH, 99, 10, 20)
     pokemon_6 = PokemonEarth(6, "Diglett", TipoArma.PUNCH, 99, 9, 18)
 
-    pokemon_was_hit = pokemon_5.ataque_pokemon(pokemon_6)
+    pokemon_was_hit = pokemon_6.ataque_pokemon(pokemon_5)
 
     if pokemon_was_hit:
         if pokemon_6.get_salud() == 97:
