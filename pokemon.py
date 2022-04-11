@@ -88,8 +88,8 @@ class Pokemon():
             self.vida = self.vida - (daño - self.defensa) 
             return True 
     
-    def ataque_pokemon(self, a_p, d_p):
-        if d_p.defensa_pokemon(a_p.defensa) == False:
+    def ataque_pokemon(self, a_p):
+        if self.defensa_pokemon(a_p.defensa) == False:
             print(self.nombre + ' se ha defendido')
             return False
         else:
@@ -177,15 +177,16 @@ def main():
         print("Test FAIL. Check the method fight_defense().")
 
 
-    '''print("=================================================================.")
+    print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
     pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUÑETAZO, 99, 10, 7)
     pokemon_6 = Pokemon(6, "Charmeleon", TipoArma.PUÑETAZO, 99, 9, 8)
 
-    pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
+    pokemon_was_hit = pokemon_6.ataque_pokemon(pokemon_5)
 
     if pokemon_was_hit:
+        
         if pokemon_6.get_salud() == 97:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
@@ -194,7 +195,7 @@ def main():
         if pokemon_6.get_salud() == 99:
             print("Test PASS. The method fight_attack() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method fight_attack().")'''
+            print("Test FAIL. Check the method fight_attack().")
 
 
 
