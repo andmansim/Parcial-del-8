@@ -50,8 +50,17 @@ class Pokemon():
     def __del__(self):
         Pokemon.__lista_ID.remove(self.ID)
     
-    def get (self):
-        pass
+    def get_nombre(self):
+        return self.nombre
+    
+    def get_defensa(self):
+        return self.defensa
+    
+    def get_ataque(self):
+        return self.ataque
+    
+    def get_salud(self):
+        return self.vida
     def set(self): #De momento no los necesito. 
         pass
     
@@ -114,9 +123,9 @@ def main():
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.HEADBUTT, 100, 8, 9)
+    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.Cabezazo, 100, 8, 9)
 
-    if pokemon_1.get_pokemon_name() == "Ivysaur":
+    if pokemon_1.get_nombre == "Ivysaur":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
@@ -126,17 +135,17 @@ def main():
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_health_points() == 100:
+    if pokemon_1.get_salud == 100:
         print("Test PASS. The parameter health_points has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_attack_rating() == 8:
+    if pokemon_1.get_ataque == 8:
         print("Test PASS. The parameter attack_rating has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_defense_rating() == 9:
+    if pokemon_1.get_defensa == 9:
         print("Test PASS. The parameter defense_rating has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
@@ -145,7 +154,7 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = Pokemon(2, "Charmander", TipoArma.HEADBUTT, 100, 7, 10)
+    pokemon_2 = Pokemon(2, "Charmander", TipoArma.Cabezazo, 100, 7, 10)
 
     if str(pokemon_2) == "Pokemon ID 2 with name Charmander has as weapon HEADBUTT and health 100":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
@@ -156,9 +165,9 @@ def main():
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.KICK, 97, 8, 9)
+    pokemon_3 = Pokemon(3, "Wartortle", TipoArma.Patada, 97, 8, 9)
 
-    if pokemon_3.is_alive():
+    if pokemon_3.estas_vivo():
         pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
 
         if not pokemon_3.is_alive():
@@ -172,7 +181,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.ELBOW, 93, 9, 6)
+    pokemon_4 = Pokemon(4, "Squirtle", TipoArma.Codazo, 93, 9, 6)
 
     pokemon_4.fight_defense(70)
 
