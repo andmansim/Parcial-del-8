@@ -10,7 +10,7 @@ class Pokemon():
         self.vida = vida
         self.ataque = ataque
         self.defensa = defensa
-        
+        armas = ["patada", "puñetazo", "codazo", "cabezazo"]
         print("--------------Comprobaciones------------------")
         
         if isinstance(self.ID, int):
@@ -22,7 +22,10 @@ class Pokemon():
         else: 
             raise TypeError('El ID tiene que ser un integrer')
         
-
+        if isinstance(self.nombre, str):
+            print('Nombre del pokemon ' + self.nombre + ' es válido')
+        else:
+            raise TypeError('El nombre tiene que ser un string')
         
         if isinstance(self.arma, TipoArma):
             
@@ -62,8 +65,8 @@ class Pokemon():
     
     def get_arma(self):
         return self.arma
-    
-    #No es necesario el set, dado que ya comprobamos los valores antes y no es necesaria su modificación
+    def set_id(self): #No es necesario el set, dado que ya comprobamos los valores antes y no es necesaria su modificación
+        pass
     
     def estas_vivo(self):
         if int(self.vida) > 0:
@@ -106,7 +109,6 @@ def main():
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
     pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
-    
 
     if pokemon_1.get_nombre() == "Ivysaur":
         print("Test PASS. The parameter pokemon_name has been correctly set.")

@@ -1,5 +1,5 @@
 from pokemon import Pokemon
-from clases.weapon_type import WeaponType
+from clases.weapon_type import TipoArma
 
 class PokemonAir(Pokemon):
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
