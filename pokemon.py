@@ -66,7 +66,12 @@ class Pokemon():
         print('Pokemon ID: ' + str(self.ID) + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + str(self.vida) + ' de vida'
               + ', una fuerza de ataque ' + str(self.ataque) + ' y una defensa de ' + str(self.defensa))
             
- 
+    def defensa_pokemon(self, daño):
+        if self.defensa >= daño:
+            return False
+        else:
+            return True
+        
 pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
 pokemon.descripcion_pokemon
 
