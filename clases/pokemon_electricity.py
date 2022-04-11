@@ -1,110 +1,42 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+from pokemon import Pokemon
+import random
+from weapon_type import TipoArma
 
-
-"""
-This Python module contains not only the class Pokemon, but also the test of
-this Python class.
-
-@contents :  This module contains not only a single Python class, but also the
-             test cases to probe its functionality.
-@project :  N/A
-@program :  N/A
-@file :  pokemon.py
-@author :  Antonio Artes Garcia (antonio.artesgarcia@ceu.es)
-           Francisco Hernando Gallego (francisco.hernandogallego@ceu.es)
-           Ruben Juarez Cadiz (ruben.juarezcadiz@ceu.es)
-
-@version :  0.0.1, 08 November 2021
-@information :  The Zen of Python
-                  https://www.python.org/dev/peps/pep-0020/
-                Style Guide for Python Code
-                  https://www.python.org/dev/peps/pep-0008/
-                Example NumPy Style Python Docstrings
-                  http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_numpy.html
-                doctest – Testing through documentation
-                  https://pymotw.com/2/doctest/
-
-@copyright :  Copyright 2021 GNU AFFERO GENERAL PUBLIC.
-              All rights are reserved. Reproduction in whole or in part is
-              prohibited without the written consent of the copyright owner.
-"""
-
-
-# Source packages.
-
-
-
-class PokemonElectricity():
-    """Python class to implement a basic version of a Pokemon of the game.
-
-    This Python class implements the basic version of a Pokemon of the game.
-
-    Syntax
-    ------
-      obj = PokemonElectricity(id, pokemon_name, weapon_type, health_points,
-                         attack_rating, defense_rating)
-
-    Parameters
-    ----------
-      [in] id ID of the Pokemon.
-      [in] pokemon_name Name of the Pokemon.
-      [in] weapon_type Type of weapon that carries out the Pokemon.
-      [in] health_points Points of health that the Pokemon has.
-      [in] attack_rating Attack rating of the Pokemon.
-      [in] defense_rating Defense rating of the Pokemon.
-
-    Returns
-    -------
-      obj Python object output parameter that represents an instance
-          of the class Pokemon.
-
-    Attributes
-    ----------
-
-    Example
-    -------
-      >>> from pokemon import Pokemon
-      >>> from weapon_type import WeaponType
-      >>> obj_Pokemon = PokemonEarth(1, "Pikachu", WeaponType.PUNCH, 100, 7, 10)
-    """
-
-
+class PokemonElectricity(Pokemon):
+    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
+       super().__init__(ID, nombre, arma, vida, ataque, defensa)
+       
+    def ataque_pokemon(self, a_p):
+        n = random.randint(1,2)
+        if n == 1:
+            a_p.ataque = a_p.ataque * 2   
+        else:
+            a_p.ataque = a_p.ataque  
+            
+        if self.defensa_pokemon(a_p.defensa) == False:
+            print(self.nombre + ' se ha defendido')
+            return False
+        else:
+            
+            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + str(a_p.ataque) + ' de vida.')
+            print('Vida restante de ' + self.nombre + ' es ' + str(self.vida))
+            return True #ha atacado
+        
+        
 
 def main():
-    """Function main of the module.
-
-    The function main of this module is used to test the Class that is described
-    in this module.
-
-    Syntax
-    ------
-      [ ] = main()
-
-    Parameters
-    ----------
-      Null .
-
-    Returns
-    -------
-      Null .
-
-    Example
-    -------
-      >>> main()
-    """
-
+    
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = PokemonElectricity(1, "Pikachu", WeaponType.HEADBUTT, 100, 8, 7)
+    pokemon_1 = PokemonElectricity(1, "Pikachu", TipoArma.CABEZAZO, 100, 8, 7)
 
     if pokemon_1.get_pokemon_name() == "Pikachu":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_weapon_type().name == "HEADBUTT":
+    if pokemon_1.get_weapon_type().name == "CABEZAZO":
         print("Test PASS. The parameter weapon_type has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
@@ -128,9 +60,9 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = PokemonElectricity(7, "Pikachu", WeaponType.HEADBUTT, 100, 7, 6)
+    pokemon_2 = PokemonElectricity(7, "Pikachu", TipoArma.CABEZAZO, 100, 7, 6)
 
-    if str(pokemon_2) == "Pokemon ID 7 with name Pikachu has as weapon HEADBUTT and health 100":
+    if str(pokemon_2) == "Pokemon ID 7 with name Pikachu has as weapon CABEZAZO and health 100":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
     else:
         print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
@@ -139,7 +71,7 @@ def main():
     print("=================================================================.")
     print("Test Case 3: Pokemon alive?¿?.")
     print("=================================================================.")
-    pokemon_3 = PokemonElectricity(3, "Pikachu", WeaponType.KICK, 97, 8, 7)
+    pokemon_3 = PokemonElectricity(3, "Pikachu", TipoArma.KICK, 97, 8, 7)
 
     if pokemon_3.is_alive():
         pokemon_was_hit = pokemon_3.fight_defense(200)  # With this the Pokemon should be retired.
@@ -161,7 +93,7 @@ def main():
     print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
-    pokemon_4 = PokemonElectricity(4, "Pikachu", WeaponType.ELBOW, 93, 9, 5)
+    pokemon_4 = PokemonElectricity(4, "Pikachu", TipoArma.ELBOW, 93, 9, 5)
 
     pokemon_was_hit = pokemon_4.fight_defense(70)
 
@@ -180,8 +112,8 @@ def main():
     print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
-    pokemon_5 = PokemonElectricity(5, "Pikachu", WeaponType.PUNCH, 99, 10, 8)
-    pokemon_6 = PokemonElectricity(6, "Pikachu", WeaponType.PUNCH, 99, 9, 6)
+    pokemon_5 = PokemonElectricity(5, "Pikachu", TipoArma.PUNCH, 99, 10, 8)
+    pokemon_6 = PokemonElectricity(6, "Pikachu", TipoArma.PUNCH, 99, 9, 6)
 
     pokemon_was_hit = pokemon_5.fight_attack(pokemon_6)
 
