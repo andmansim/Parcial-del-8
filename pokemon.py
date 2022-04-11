@@ -49,7 +49,12 @@ class Pokemon():
     
     def __del__(self):
         Pokemon.__lista_ID.remove(self.ID)
-        
+    
+    def get (self):
+        pass
+    def set(self): #De momento no los necesito. 
+        pass
+    
     def estas_vivo(self):
         if int(self.vida) > 0:
             print('El pokemon está vivo')
