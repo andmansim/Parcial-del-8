@@ -7,7 +7,7 @@ class TipoArma(Enum):
     PATADA =  12
     CODAZO = 9
 
-
+print(TipoArma.CABEZAZO.name)
 
 
 def main():

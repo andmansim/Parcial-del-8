@@ -28,9 +28,10 @@ class Pokemon():
             raise TypeError('El nombre tiene que ser un string')
         
         if isinstance(self.arma, TipoArma):
-            print("El arma " + TipoArma.name + " es válida")
+            
+            print("El arma " + self.get_arma().name + " es válida")
         else:
-            raise TypeError('Np es posible esa arma')
+            raise TypeError('No es posible esa arma')
         
         if 1 <= int(self.vida) <= 100:
             print('La salud del pokemon ' + self.nombre + ' no es cero')
@@ -74,18 +75,18 @@ class Pokemon():
             print('Tu pokemon está muerto')
     
     def descripcion_pokemon(self):
-        print('--------------INFORMACIÓN DE LOS POKEMON----------------')
-        print('Pokemon ID: ' + str(self.ID) + ' se llama ' + self.nombre + ', su arma es: ' + self.arma + ', tiene ' + str(self.vida) + ' de vida'
-              + ', una fuerza de ataque ' + str(self.ataque) + ' y una defensa de ' + str(self.defensa))
-            
+        #print('--------------INFORMACIÓN DE LOS POKEMON----------------')
+        descrip = 'Pokemon ID: ' + str(self.ID) + ' se llama ' + self.nombre + ', su arma es: ' + self.get_arma().name + ', tiene ' + str(self.vida) + ' de vida' + ', una fuerza de ataque ' + str(self.ataque) + ' y una defensa de ' + str(self.defensa)
+        return descrip  
+      
     def defensa_pokemon(self, daño):
         if self.defensa >= daño:
             return False #no ha recibido daño
         else:
             return True 
     
-    def ataque_pokemon(self, a_p):
-        if pokemon.defensa_pokemon(a_p.defensa) == False:
+    def ataque_pokemon(self, a_p, d_p):
+        if d_p.defensa_pokemon(a_p.defensa) == False:
             print(self.nombre + ' se ha defendido')
             return False
         else:
@@ -95,10 +96,10 @@ class Pokemon():
             print('Vida restante de ' + self.nombre + ' es ' + str(self.vida))
             return True #ha atacado
     
-pokemon = Pokemon(24,'Diglett',TipoArma.Puñetazo,82,9,7)
-pokemon1 = Pokemon(11,'Pikachu',TipoArma.Cabezazo,69,8,8)
+'''pokemon = Pokemon(24,'Diglett',TipoArma.PUÑETAZO,82,9,7)
+pokemon1 = Pokemon(11,'Pikachu',TipoArma.CABEZAZO,69,8,8)
 pokemon.descripcion_pokemon
-pokemon.ataque_pokemon(pokemon1)
+pokemon.ataque_pokemon(pokemon1)'''
 
 def main():
     """Function main of the module.
@@ -126,29 +127,29 @@ def main():
     print("=================================================================.")
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
-    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.Cabezazo, 100, 8, 9)
+    pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
 
-    if pokemon_1.get_nombre == "Ivysaur":
+    if pokemon_1.get_nombre() == "Ivysaur":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_arma.name == "HEADBUTT":
+    if pokemon_1.get_arma().name == "CABEZAZO":
         print("Test PASS. The parameter weapon_type has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_salud == 100:
+    if pokemon_1.get_salud() == 100:
         print("Test PASS. The parameter health_points has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_ataque == 8:
+    if pokemon_1.get_ataque() == 8:
         print("Test PASS. The parameter attack_rating has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
 
-    if pokemon_1.get_defensa == 9:
+    if pokemon_1.get_defensa() == 9:
         print("Test PASS. The parameter defense_rating has been correctly set.")
     else:
         print("Test FAIL. Check the method __init__().")
@@ -157,10 +158,12 @@ def main():
     print("=================================================================.")
     print("Test Case 2: Human-readable format of the object.")
     print("=================================================================.")
-    pokemon_2 = Pokemon(2, "Charmander", TipoArma.Cabezazo, 100, 7, 10)
+    pokemon_2 = Pokemon(2, "Charmander", TipoArma.CABEZAZO, 100, 7, 10)
 
-    if str(pokemon_2) == "Pokemon ID 2 with name Charmander has as weapon HEADBUTT and health 100":
+    
+    if pokemon_2.descripcion_pokemon() == "Pokemon ID: 2 se llama Charmander, su arma es: CABEZAZO, tiene 100 de vida, una fuerza de ataque 7 y una defensa de 10":
         print("Test PASS. The human-readable format of the object has been implemented correctly.")
+    
     else:
         print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
 
