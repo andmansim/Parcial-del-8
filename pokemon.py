@@ -80,13 +80,13 @@ class Pokemon():
             
             self.vida = self.vida - a_p.ataque
             print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + str(a_p.ataque) + ' de vida.')
-            print('Vida restante de ' + self.nombre + ' es ' str(self.vida))
+            print('Vida restante de ' + self.nombre + ' es ' + str(self.vida))
             return True #ha atacado
     
 pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
 pokemon1 = Pokemon(11,'Pikachu','cabezazo',69,8,8)
 pokemon.descripcion_pokemon
-print(pokemon.ataque_pokemon(pokemon1))
+pokemon.ataque_pokemon(pokemon1)
 
 def main():
     """Function main of the module.
