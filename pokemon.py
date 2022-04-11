@@ -63,11 +63,7 @@ class Pokemon():
     def get_arma(self):
         return self.arma
     
-    def set_nombre(self): #De momento no los necesito. 
-        if isinstance(self.nombre, str):
-            print('Nombre del pokemon ' + self.nombre + ' es válido')
-        else:
-            raise TypeError('El nombre tiene que ser un string')
+    #No es necesario el set, dado que ya comprobamos los valores antes y no es necesaria su modificación
     
     def estas_vivo(self):
         if int(self.vida) > 0:
@@ -110,6 +106,7 @@ def main():
     print("Test Case 1: Create a Pokemon.")
     print("=================================================================.")
     pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
+    
 
     if pokemon_1.get_nombre() == "Ivysaur":
         print("Test PASS. The parameter pokemon_name has been correctly set.")
