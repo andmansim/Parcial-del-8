@@ -85,7 +85,7 @@ class Pokemon():
         if self.defensa >= daño:
             return False #no ha recibido daño
         else:
-            self.vida = self.vida - daño
+            self.vida = self.vida - (daño - self.defensa) 
             return True 
     
     def ataque_pokemon(self, a_p, d_p):
@@ -164,20 +164,20 @@ def main():
         print("Test FAIL. Check the method is_alive().")
 
 
-    '''print("=================================================================.")
+    print("=================================================================.")
     print("Test Case 4: Check the defense during a Fight.")
     print("=================================================================.")
     pokemon_4 = Pokemon(4, "Squirtle", TipoArma.CODAZO, 93, 9, 6)
 
-    pokemon_4.fight_defense(70)
+    pokemon_4.defensa_pokemon(70)
 
-    if pokemon_4.get_health_points() == 29:
+    if pokemon_4.get_salud() == 29:
         print("Test PASS. The method fight_defense() has been implemented correctly.")
     else:
         print("Test FAIL. Check the method fight_defense().")
 
 
-    print("=================================================================.")
+    '''print("=================================================================.")
     print("Test Case 5: Check the attack during a Fight.")
     print("=================================================================.")
     pokemon_5 = Pokemon(5, "Venusaur", TipoArma.PUÑETAZO, 99, 10, 7)
