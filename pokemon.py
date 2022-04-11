@@ -74,6 +74,7 @@ class Pokemon():
     
     def ataque_pokemon(self, a_p):
         if pokemon.defensa_pokemon(a_p.defensa) == False:
+            print(self.nombre + ' se ha defendido')
             return False
         else:
             
