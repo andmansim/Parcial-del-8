@@ -79,7 +79,8 @@ class Pokemon():
         else:
             
             self.vida = self.vida - a_p.ataque
-            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + self.vida + ' de vida')
+            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + str(a_p.ataque) + ' de vida.')
+            print('Vida restante de ' + self.nombre + str(self.vida))
             return True #ha atacado
     
 pokemon = Pokemon(24,'Diglett','puñetazo',82,9,7)
