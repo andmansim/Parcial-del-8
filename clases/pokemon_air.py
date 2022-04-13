@@ -113,7 +113,7 @@ def main():
     pokemon_5 = PokemonAir(5, "Pidgey", TipoArma.PUÑETAZO, 99, 10, 8)
     pokemon_6 = PokemonAir(6, "Pidgey", TipoArma.PUÑETAZO, 99, 9, 6)
 
-    pokemon_was_hit = pokemon_5.ataque_pokemon(pokemon_6)
+    pokemon_was_hit = pokemon_6.ataque_pokemon(pokemon_5)
 
     if pokemon_was_hit:
         if pokemon_6.get_salud() == 95:
