@@ -24,44 +24,24 @@ def get_data_from_user(nombre):
          
          list_p.append(construir_p)
       return list_p
-
-
-         
+        
 jugador1 = get_data_from_user('jugador1.csv')
 jugador2 = get_data_from_user('jugador2.csv')
-print(jugador1)
-print(jugador2)
-
-
 
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
-    """Function to know the list of Pokemons that are associated to the Coach.
-
-    This function is used in order to know the list of Pokemos that are
-    associated to the coach. This function prints the result of this list, so
-    the user can select a Pokemon.
-
-    Syntax
-    ------
-       [ ] = get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
-
-    Parameters
-    ----------
-       [in] coach_to_ask Coach to ask for her/his list of Pokemons.
-       [in] list_of_pokemons List of the Pokemons that are associated to the
-                             coach.
-
-    Returns
-    -------
-       List List of the Pokemons associaated to the coach that are undefeated.
-
-    Example
-    -------
-       >>> get_pokemon_in_a_list_of_pokemons(1, list_of_pokemons)
-    """
-
-
+   print('Estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
+   usuario = input()
+   for x in range(0, len(list_of_pokemons)):
+      if usuario == list_of_pokemons[x].nombre:
+            try:
+               Pokemon.estas_vivo(list_of_pokemons[x])
+            except:
+               print('Este pokemon está muerto, por favor elije otro')
+               
+          
+   
+get_pokemon_in_a_list_of_pokemons(1, jugador1)
 
 def coach_is_undefeated(list_of_pokemons):
     """Function to know if the Coach is still undefeated.
