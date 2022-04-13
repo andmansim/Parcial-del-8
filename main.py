@@ -102,10 +102,12 @@ def main():
    print("Statistics")
    print("------------------------------------------------------------------")
    print("Game User 1:")
-
+   for e in range(len(jugador1)):
+      print('Pokemons del jugador 1: ' + jugador1[e].nombre + ' tiene ' + jugador1[e].vida + ' de vida')
 
    print("Game User 2:")
-
+   for r in range(len(jugador1)):
+          print('Pokemons del jugador 1: ' + jugador2[r].nombre + ' tiene ' + jugador2[r].vida + ' de vida')
 
 
 # Checking whether this module is executed just itself alone.
