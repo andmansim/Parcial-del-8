@@ -29,9 +29,11 @@ def get_data_from_user(nombre):
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
    print('Jugador ' + str(coach_to_ask) + ' estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
-   if usuario is not list_of_pokemons:
-          raise ValueError('Ese nombre no es válido')
+   while usuario != list_of_pokemons[0].nombre and usuario != list_of_pokemons[1].nombre and usuario != list_of_pokemons[1].nombre:
+         print('Ese nombre no es válido') 
+         usuario = input()
    for x in range(0, len(list_of_pokemons)):
+    
       if usuario == list_of_pokemons[x].nombre:
             
             if Pokemon.estas_vivo(list_of_pokemons[x]) == True:
@@ -39,11 +41,7 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
             else:
                print('Este pokemon está muerto, por favor elije otro')
                po = get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons)
-               return po
-              
-    
-               
-            
+               return po 
 
 def coach_is_undefeated(list_of_pokemons):
    muertos = True
