@@ -1,25 +1,20 @@
 import csv
 
-lista = []
-lista1 = []
-def get_data_from_user(nombre, lista):
-   with open(nombre) as file:
-      leer = csv.DictReader(file, delimiter = ',')
-      for i in leer:
-         lista.append(i)
-   
-      return lista
 
-def separar (listas):
-       
-   for x in range(len(listas)):
-      print(listas[x])
+def get_data_from_user(nombre):
+   with open(nombre, 'r') as file:
+      leer = csv.reader(file)
+      for i in leer:
+         pokemons = list(i)
+   
+      return pokemons
+
 
          
-get_data_from_user('jugador1.csv', lista)
-separar(lista)
-get_data_from_user('jugador2.csv', lista1)
-separar(lista1)
+get_data_from_user('jugador1.csv')
+
+get_data_from_user('jugador2.csv')
+
 
 
 
