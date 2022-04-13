@@ -2,10 +2,10 @@
 from enum import Enum
 class TipoArma(Enum):
     #Valor de ataque
-    PUÑETAZO = 5
-    CABEZAZO = 8
-    PATADA =  12
-    CODAZO = 9
+    PUÑETAZO = 2
+    CABEZAZO = 10
+    PATADA =  4
+    CODAZO = 6
 
 
 
