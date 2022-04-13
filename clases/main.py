@@ -1,6 +1,6 @@
 import csv
-from clases.pokemon import Pokemon
-from clases.weapon_type import TipoArma
+from pokemon import Pokemon
+from weapon_type import TipoArma
 
 def get_data_from_user(nombre):
    a1 = TipoArma.CABEZAZO
