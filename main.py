@@ -36,12 +36,11 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
                   return list_of_pokemons[x] 
             else:
                print('Este pokemon está muerto, por favor elije otro')
-               b = False
-               if coach_is_undefeated(list_of_pokemons) == True:
-                      b = True
-                      return b #Todos están muertos
-               else:
-                      return b
+               po = get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons)
+               return po
+              
+    
+               
             
 
 def coach_is_undefeated(list_of_pokemons):
@@ -63,9 +62,12 @@ def main():
    print("The Game starts...")
    print("------------------------------------------------------------------")
    q = True
-   while q:
+
+   while coach_is_undefeated(jugador1) == False and coach_is_undefeated(jugador1) == False:
+  
       p1 = get_pokemon_in_a_list_of_pokemons(1, jugador1)
       p2 = get_pokemon_in_a_list_of_pokemons(2, jugador2)
+      
       w = True
       while w:
          p1.ataque_pokemon(p2)
@@ -76,6 +78,9 @@ def main():
          if p2.vida == 0:
                 print('Pokemon derrotado')
                 w = False
+   
+   print ("uno no tiene pokemon, se acaba el juego")             
+   
     # Get a copy of the list of pokemons:
 
 
