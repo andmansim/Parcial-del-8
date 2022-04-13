@@ -2,7 +2,6 @@ import csv
 from pokemon import Pokemon
 from clases.weapon_type import TipoArma
 
-
 def get_data_from_user(nombre):
    a1 = TipoArma.CABEZAZO
    list_p = []
@@ -29,7 +28,7 @@ def get_data_from_user(nombre):
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
    print('Jugador ' + str(coach_to_ask) + ' estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
-   while usuario != list_of_pokemons[0].nombre and usuario != list_of_pokemons[1].nombre and usuario != list_of_pokemons[1].nombre:
+   while usuario != list_of_pokemons[0].nombre and usuario != list_of_pokemons[1].nombre and usuario != list_of_pokemons[2].nombre:
          print('Ese nombre no es válido') 
          usuario = input()
    for x in range(0, len(list_of_pokemons)):
@@ -62,9 +61,9 @@ def main():
    print("The Game starts...")
    print("------------------------------------------------------------------")
    q = True
-
+  # Main loop.
    while coach_is_undefeated(jugador1) == False and coach_is_undefeated(jugador1) == False:
-  
+        # Choose first pokemons
       p1 = get_pokemon_in_a_list_of_pokemons(1, jugador1)
       p2 = get_pokemon_in_a_list_of_pokemons(2, jugador2)
       
@@ -83,16 +82,7 @@ def main():
    if coach_is_undefeated(jugador2) == True:     
       print ("El jugador 2 no tiene pokemon. El jugador 1 ha ganado")       
    
-    # Get a copy of the list of pokemons:
-
-
-    # Choose first pokemons
  
-
-    # Main loop.
-
-
-
    print("------------------------------------------------------------------")
    print("The Game has end...")
    print("------------------------------------------------------------------")
@@ -103,11 +93,11 @@ def main():
    print("------------------------------------------------------------------")
    print("Game User 1:")
    for e in range(len(jugador1)):
-      print('Pokemons del jugador 1: ' + jugador1[e].nombre + ' tiene ' + jugador1[e].vida + ' de vida')
+      print('Pokemons del jugador 1: ' + jugador1[e].nombre + ' tiene ' + str(jugador1[e].vida) + ' de vida')
 
    print("Game User 2:")
    for r in range(len(jugador1)):
-          print('Pokemons del jugador 1: ' + jugador2[r].nombre + ' tiene ' + jugador2[r].vida + ' de vida')
+          print('Pokemons del jugador 2: ' + jugador2[r].nombre + ' tiene ' + str(jugador2[r].vida) + ' de vida')
 
 
 # Checking whether this module is executed just itself alone.
