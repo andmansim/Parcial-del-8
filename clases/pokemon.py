@@ -1,4 +1,4 @@
-from clases.weapon_type import TipoArma
+from weapon_type import TipoArma
 #from pokemon import Pokemon
 
 class Pokemon():
