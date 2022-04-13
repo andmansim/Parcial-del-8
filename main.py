@@ -25,9 +25,6 @@ def get_data_from_user(nombre):
          list_p.append(construir_p)
       return list_p
         
-jugador1 = get_data_from_user('jugador1.csv')
-jugador2 = get_data_from_user('jugador2.csv')
-
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
    print('Jugador ' + coach_to_ask + 'estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
@@ -51,39 +48,17 @@ def coach_is_undefeated(list_of_pokemons):
    return muertos
 
 def main():
-    """Function main of the module.
 
-    The function main of this module is used to perform the Game.
+   print("Welcome to the Game.")
+   print("Let's start to set the configuration of each game user. \n")
 
-    Syntax
-    ------
-      [ ] = main()
-
-    Parameters
-    ----------
-      Null .
-
-    Returns
-    -------
-      Null .
-
-    Example
-    -------
-      >>> main()
-    """
-
-    print("Welcome to the Game.")
-    print("Let's start to set the configuration of each game user. \n")
-
-    # Get configuration for Game User 1.
+   jugador1 = get_data_from_user('jugador1.csv')
+   jugador2 = get_data_from_user('jugador2.csv')
 
 
-    # Get configuration for Game User 2.
-
-
-    print("------------------------------------------------------------------")
-    print("The Game starts...")
-    print("------------------------------------------------------------------")
+   print("------------------------------------------------------------------")
+   print("The Game starts...")
+   print("------------------------------------------------------------------")
 
     # Get a copy of the list of pokemons:
 
@@ -95,18 +70,18 @@ def main():
 
 
 
-    print("------------------------------------------------------------------")
-    print("The Game has end...")
-    print("------------------------------------------------------------------")
+   print("------------------------------------------------------------------")
+   print("The Game has end...")
+   print("------------------------------------------------------------------")
 
 
-    print("------------------------------------------------------------------")
-    print("Statistics")
-    print("------------------------------------------------------------------")
-    print("Game User 1:")
+   print("------------------------------------------------------------------")
+   print("Statistics")
+   print("------------------------------------------------------------------")
+   print("Game User 1:")
 
 
-    print("Game User 2:")
+   print("Game User 2:")
 
 
 
