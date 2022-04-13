@@ -30,7 +30,7 @@ jugador2 = get_data_from_user('jugador2.csv')
 
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
-   print('Estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
+   print('Jugador ' + coach_to_ask + 'estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
    for x in range(0, len(list_of_pokemons)):
       if usuario == list_of_pokemons[x].nombre:
@@ -44,29 +44,11 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
 get_pokemon_in_a_list_of_pokemons(1, jugador1)
 
 def coach_is_undefeated(list_of_pokemons):
-    """Function to know if the Coach is still undefeated.
-
-    This function is used in order to know if the Coach is still undefeated.
-
-    Syntax
-    ------
-       [ ] = coach_is_undefeated(list_of_pokemons)
-
-    Parameters
-    ----------
-       [in] list_of_pokemons List of the Pokemons that are associated to the
-                             coach.
-
-    Returns
-    -------
-       Boolean True if the coach has all her/his Pokemons defeated.
-               False if the coach has any Pokemon that is undefeated.
-
-    Example
-    -------
-       >>> coach_is_undefeated(list_of_pokemons)
-    """
-
+   muertos = True
+   for j in range(len(list_of_pokemons)):
+         if Pokemon.estas_vivo(list_of_pokemons[j]) == True:
+               muertos = False
+   return muertos
 
 def main():
     """Function main of the module.
