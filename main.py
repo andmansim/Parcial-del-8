@@ -1,5 +1,5 @@
 import csv
-from pokemon import Pokemon
+from clases.pokemon import Pokemon
 from clases.weapon_type import TipoArma
 
 def get_data_from_user(nombre):
