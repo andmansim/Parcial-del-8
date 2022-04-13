@@ -2,9 +2,10 @@ import csv
 from pokemon import Pokemon
 from clases.weapon_type import TipoArma
 
-list_p = []
+
 def get_data_from_user(nombre):
    a1 = TipoArma.CABEZAZO
+   list_p = []
    with open(nombre, 'r') as file:
       leer = csv.reader(file)
       for i in leer:
@@ -26,9 +27,10 @@ def get_data_from_user(nombre):
 
 
          
-get_data_from_user('jugador1.csv')
-print(list_p)
-get_data_from_user('jugador2.csv')
+jugador1 = get_data_from_user('jugador1.csv')
+jugador2 = get_data_from_user('jugador2.csv')
+print(jugador1)
+print(jugador2)
 
 
 
