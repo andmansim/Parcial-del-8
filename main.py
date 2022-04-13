@@ -31,9 +31,10 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
    usuario = input()
    for x in range(0, len(list_of_pokemons)):
       if usuario == list_of_pokemons[x].nombre:
-            try:
-               Pokemon.estas_vivo(list_of_pokemons[x])
-            except:
+            
+            if Pokemon.estas_vivo(list_of_pokemons[x]) == True:
+                  return list_of_pokemons[x] 
+            else:
                print('Este pokemon está muerto, por favor elije otro')
                b = False
                if coach_is_undefeated(list_of_pokemons) == True:
@@ -41,7 +42,7 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
                       return b #Todos están muertos
                else:
                       return b
-            return list_of_pokemons[x]
+            
 
 def coach_is_undefeated(list_of_pokemons):
    muertos = True

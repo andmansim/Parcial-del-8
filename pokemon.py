@@ -70,10 +70,10 @@ class Pokemon():
     
     def estas_vivo(self):
         if int(self.vida) > 0:
-            print('El pokemon está vivo')
+            #print('El pokemon está vivo')
             return True
         else:
-            print('Tu pokemon está muerto')
+            #print('Tu pokemon está muerto')
             return False
     
     def descripcion_pokemon(self):
@@ -85,7 +85,9 @@ class Pokemon():
         if self.defensa >= daño:
             return False #no ha recibido daño
         else:
-            self.vida = self.vida - (daño - self.defensa) 
+            self.vida = self.vida - (daño - self.defensa)
+            if self.vida < 0:
+                self.vida = 0 
             return True 
     
     def ataque_pokemon(self, a_p):
