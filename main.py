@@ -6,7 +6,7 @@ def get_data_from_user(nombre):
       leer = csv.reader(file)
       for i in leer:
          pokemons = list(i)
-   
+         print(pokemons)
       return pokemons
 
 
