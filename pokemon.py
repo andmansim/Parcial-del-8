@@ -89,12 +89,12 @@ class Pokemon():
             return True 
     
     def ataque_pokemon(self, a_p):
-        if self.defensa_pokemon(a_p.defensa) == False:
+        if self.defensa_pokemon(a_p.ataque) == False:
             print(self.nombre + ' se ha defendido')
             return False
         else:
             
-            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + str(a_p.ataque) + ' de vida.')
+            print(a_p.nombre + ' ha atacado a ' + self.nombre + ' y le ha quitado ' + str(a_p.ataque - self.defensa) + ' de vida.')
             print('Vida restante de ' + self.nombre + ' es ' + str(self.vida))
             return True #ha atacado
     
