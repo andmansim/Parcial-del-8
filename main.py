@@ -27,7 +27,7 @@ def get_data_from_user(nombre):
         
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
-   print('Jugador ' + coach_to_ask + 'estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
+   print('Jugador ' + str(coach_to_ask) + ' estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
    for x in range(0, len(list_of_pokemons)):
       if usuario == list_of_pokemons[x].nombre:
@@ -35,10 +35,13 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
                Pokemon.estas_vivo(list_of_pokemons[x])
             except:
                print('Este pokemon está muerto, por favor elije otro')
-               
-          
-   
-get_pokemon_in_a_list_of_pokemons(1, jugador1)
+               b = False
+               if coach_is_undefeated(list_of_pokemons) == True:
+                      b = True
+                      return b #Todos están muertos
+               else:
+                      return b
+            return list_of_pokemons[x]
 
 def coach_is_undefeated(list_of_pokemons):
    muertos = True
@@ -55,11 +58,16 @@ def main():
    jugador1 = get_data_from_user('jugador1.csv')
    jugador2 = get_data_from_user('jugador2.csv')
 
-
    print("------------------------------------------------------------------")
    print("The Game starts...")
    print("------------------------------------------------------------------")
-
+   q = True
+   while q:
+      get_pokemon_in_a_list_of_pokemons(1, jugador1)
+      get_pokemon_in_a_list_of_pokemons(2, jugador2)
+      for i in range(0,5):
+         get_pokemon_in_a_list_of_pokemons(1, jugador1).Pokemon.ataque_pokemon(get_pokemon_in_a_list_of_pokemons(2, jugador2))
+      
     # Get a copy of the list of pokemons:
 
 
