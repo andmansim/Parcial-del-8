@@ -78,8 +78,10 @@ def main():
          if p2.vida == 0:
                 print('Pokemon derrotado')
                 w = False
-   
-   print ("uno no tiene pokemon, se acaba el juego")             
+   if coach_is_undefeated(jugador1) == True:
+      print ("El jugador 1 no tiene pokemon. El jugador 2 ha ganado")
+   if coach_is_undefeated(jugador2) == True:     
+      print ("El jugador 2 no tiene pokemon. El jugador 1 ha ganado")       
    
     # Get a copy of the list of pokemons:
 
