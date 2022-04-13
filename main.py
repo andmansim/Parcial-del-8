@@ -63,11 +63,18 @@ def main():
    print("------------------------------------------------------------------")
    q = True
    while q:
-      get_pokemon_in_a_list_of_pokemons(1, jugador1)
-      get_pokemon_in_a_list_of_pokemons(2, jugador2)
-      for i in range(0,5):
-         get_pokemon_in_a_list_of_pokemons(1, jugador1).Pokemon.ataque_pokemon(get_pokemon_in_a_list_of_pokemons(2, jugador2))
-      
+      p1 = get_pokemon_in_a_list_of_pokemons(1, jugador1)
+      p2 = get_pokemon_in_a_list_of_pokemons(2, jugador2)
+      w = True
+      while w:
+         p1.ataque_pokemon(p2)
+         if p1.vida == 0:
+                print('Pokemon derrotado')
+                w = False
+         p2.ataque_pokemon(p1)
+         if p2.vida == 0:
+                print('Pokemon derrotado')
+                w = False
     # Get a copy of the list of pokemons:
 
 
