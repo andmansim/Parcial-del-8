@@ -1,24 +1,25 @@
 import csv
-from clases.pokemon import Pokemon
+from pokemon import Pokemon
 from clases.weapon_type import TipoArma
 
 list_p = []
 def get_data_from_user(nombre):
+   print (TipoArma.CABEZAZO.name)
    with open(nombre, 'r') as file:
       leer = csv.reader(file)
       for i in leer:
          pokemons = list(i)
-         a = TipoArma.pokemons[2]
+         a = pokemons[2]
          if a == 'cabezazo':
-            a = TipoArma.CABEZAZO
+            a = TipoArma.CABEZAZO.name
          elif a == 'codazo':
-            a = TipoArma.CODAZO
+            a = TipoArma.CODAZO.name
          elif a == 'puñetazo':
-            a == TipoArma.PUÑETAZO 
+            a == TipoArma.PUÑETAZO.name
          elif a == 'patada':
-            a == TipoArma.PATADA   
+            a == TipoArma.PATADA.name   
          
-         construir_p = Pokemon(int(pokemons[0]), pokemons[1], a, int(pokemons[3]), int(pokemons[4]), int(pokemons[5]))
+         construir_p = Pokemon(int(pokemons[0]), pokemons[1], TipoArma.CABEZAZO, int(pokemons[3]), int(pokemons[4]), int(pokemons[5]))
          
          list_p.append(construir_p)
       return list_p
