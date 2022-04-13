@@ -4,22 +4,22 @@ from clases.weapon_type import TipoArma
 
 list_p = []
 def get_data_from_user(nombre):
-   print (TipoArma.CABEZAZO.name)
+   a1 = TipoArma.CABEZAZO
    with open(nombre, 'r') as file:
       leer = csv.reader(file)
       for i in leer:
          pokemons = list(i)
          a = pokemons[2]
          if a == 'cabezazo':
-            a = TipoArma.CABEZAZO.name
+            a1 = TipoArma.CABEZAZO
          elif a == 'codazo':
-            a = TipoArma.CODAZO.name
+            a1 = TipoArma.CODAZO
          elif a == 'puñetazo':
-            a == TipoArma.PUÑETAZO.name
+            a1 == TipoArma.PUÑETAZO
          elif a == 'patada':
-            a == TipoArma.PATADA.name   
+            a1 == TipoArma.PATADA
          
-         construir_p = Pokemon(int(pokemons[0]), pokemons[1], TipoArma.CABEZAZO, int(pokemons[3]), int(pokemons[4]), int(pokemons[5]))
+         construir_p = Pokemon(int(pokemons[0]), pokemons[1], a1, int(pokemons[3]), int(pokemons[4]), int(pokemons[5]))
          
          list_p.append(construir_p)
       return list_p
