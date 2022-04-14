@@ -63,13 +63,13 @@ def main():
     pokemon_2 = PokemonElectricity(7, "Pikachu", TipoArma.CABEZAZO, 100, 7, 6)
 
     if pokemon_2.descripcion_pokemon() == "Pokemon ID: 7 se llama Pikachu, su arma es: CABEZAZO, tiene 100 de vida, una fuerza de ataque 7 y una defensa de 6":
-        print("Has pasado el test. The human-readable format of the object has been implemented correctly.")
+        print("Has pasado el test. El lenguaje humano del objeto ha sido implementado correctamente.")
     else:
-        print("Test FAIL. Check the method __str__()." + " RESULT: " + str(pokemon_2))
+        print("Has suspendido el test. Revisa el método __str__()." + " RESULTADO: " + pokemon_2.descripcion_pokemon())
 
 
     print("=================================================================.")
-    print("Test Case 3: Pokemon alive?¿?.")
+    print("Test Caso 3: El pokemon está vivo?¿?.")
     print("=================================================================.")
     pokemon_3 = PokemonElectricity(3, "Pikachu", TipoArma.PATADA, 97, 8, 7)
 
@@ -78,20 +78,20 @@ def main():
 
         if pokemon_was_hit:
             if not pokemon_3.estas_vivo():
-                print("Has pasado el test. The method estas_vivo() has been implemented correctly.")
+                print("Has pasado el test. El método estas_vivo() ha sido implementado correctamente.")
             else:
-                print("Test FAIL. Check the method estas_vivo().")
+                print("Has suspendido el test. Revisa el método estas_vivo().")
         else:
             if pokemon_3.estas_vivo():
-                print("Has pasado el test. The method estas_vivo() has been implemented correctly.")
+                print("Has pasado el test. El método estas_vivo() ha sido implementado correctamente.")
             else:
-                print("Test FAIL. Check the method estas_vivo().")
+                print("Has suspendido el test. Revisa el método estas_vivo().")
     else:
-        print("Test FAIL. Check the method estas_vivo().")
+        print("Has suspendido el test. Revisa el método estas_vivo().")
 
 
     print("=================================================================.")
-    print("Test Case 4: Check the defense during a Fight.")
+    print("Test Caso 4: Revisando la defensa durante una pelea.")
     print("=================================================================.")
     pokemon_4 = PokemonElectricity(4, "Pikachu", TipoArma.CODAZO, 93, 9, 5)
 
@@ -101,16 +101,16 @@ def main():
         if pokemon_4.get_salud() == 28:
             print("Has pasado el test. The method defensa_pokemon() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method defensa_pokemon().")
+            print("Has suspendido el test. Revisa el método defensa_pokemon()")
     else:
         if pokemon_4.get_salud() == 93:
             print("Has pasado el test. The method defensa_pokemon() has been implemented correctly.")
         else:
-            print("Test FAIL. Check the method defensa_pokemon().")
+            print("Has suspendido el test. Revisa el método defensa_pokemon()")
 
 
     print("=================================================================.")
-    print("Test Case 5: Check the attack during a Fight.")
+    print("Test Caso 5: Revisando el ataque durante una pelea.")
     print("=================================================================.")
     pokemon_5 = PokemonElectricity(5, "Pikachu", TipoArma.PUÑETAZO, 99, 10, 8)
     pokemon_6 = PokemonElectricity(6, "Pikachu", TipoArma.PUÑETAZO, 99, 9, 6)
@@ -119,14 +119,14 @@ def main():
 
     if pokemon_was_hit:
         if (pokemon_6.get_salud() == 95) or (pokemon_6.get_salud() == 85):
-            print("Has pasado el test. The method fight_attack() has been implemented correctly.")
+            print("Has pasado el test. El método ataque_pokemon() ha sido implementado correctamente.")
         else:
-            print("Test FAIL. Check the method fight_attack().")
+            print("Has suspendido el test. Revisa el método ataque_pokemon().")
     else:
         if pokemon_6.get_salud() == 99:
-            print("Has pasado el test. The method fight_attack() has been implemented correctly.")
+            print("Has pasado el test. El método ataque_pokemon() ha sido implementado correctamente.")
         else:
-            print("Test FAIL. Check the method fight_attack().")
+            print("Has suspendido el test. Revisa el método ataque_pokemon().")
 
 
 
