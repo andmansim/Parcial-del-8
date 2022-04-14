@@ -58,7 +58,7 @@ def main():
 
 
     print("=================================================================.")
-    print("Test Caso 2: Human-readable format of the object.")
+    print("Test Caso 2: Lenguaje humano del objeto.")
     print("=================================================================.")
     pokemon_2 = PokemonElectricity(7, "Pikachu", TipoArma.CABEZAZO, 100, 7, 6)
 
