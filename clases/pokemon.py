@@ -104,7 +104,7 @@ class Pokemon():
 def main():
     
     print("=================================================================.")
-    print("Test Case 1: Create a Pokemon.")
+    print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
     pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
 

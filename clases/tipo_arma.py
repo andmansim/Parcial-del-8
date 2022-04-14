@@ -11,74 +11,54 @@ class TipoArma(Enum):
 
 
 def main():
-    """Function main of the module.
-
-    The function main of this module is used to test the Class TipoArma.
-
-    Syntax
-    ------
-      [ ] = main()
-
-    Parameters
-    ----------
-      Null .
-
-    Returns
-    -------
-      Null .
-
-    Example
-    -------
-      >>> main()
-    """
-
+    
     print("=================================================================.")
-    print("Test Case 1: Check Class TipoArma - Name.")
+    print("Test Caso 1: Revisar la clase TipoArma - Nombre.")
     print("=================================================================.")
 
     if isinstance(TipoArma.PUÑETAZO, TipoArma):
-        print("Test PASS. The enum for PUÑETAZO has been correctly set.")
+        print("Has pasado el test. La enumeración de PUÑETAZO se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if isinstance(TipoArma.PATADA, TipoArma):
-        print("Test PASS. The enum for PATADA has been correctly set.")
+        print("Has pasado el test. La enumeración de PATADA se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if isinstance(TipoArma.CODAZO, TipoArma):
-        print("Test PASS. The enum for CODAZO has been correctly set.")
+        print("Has pasado el test. La enumeración de CODAZO se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if isinstance(TipoArma.CABEZAZO, TipoArma):
-        print("Test PASS. The enum for Head Butt has been correctly set.")
+        print("Has pasado el test. La enumeración de Head Butt se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     print("=================================================================.")
-    print("Test Case 2: Check Class TipoArma - Value.")
+    print("Test Caso 2: Revisar la clase TipoArma - Valor.")
     print("=================================================================.")
 
     if TipoArma.PUÑETAZO.value == 2:
-        print("Test PASS. The enum for PUÑETAZO has been correctly set.")
+        print("Has pasado el test. La enumeración de PUÑETAZO se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if TipoArma.PATADA.value == 4:
-        print("Test PASS. The enum for PATADA has been correctly set.")
+        print("Has pasado el test. La enumeración de PATADA se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if TipoArma.CODAZO.value == 6:
-        print("Test PASS. The enum for CODAZO has been correctly set.")
+        print("Has pasado el test. La enumeración de CODAZO se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
     if TipoArma.CABEZAZO.value == 10:
-        print("Test PASS. The enum for Head Butt has been correctly set.")
+        print("Has pasado el test. La enumeración de Head Butt se ha puesto correctamente.")
     else:
-        print("Test FAIL. Check the method __init__().")
+        print("Has suspendido el test. Revisa el método __init__().")
 
 
 # Checking whether this module is executed just itself alone.

@@ -13,7 +13,7 @@ class PokemonEarth(Pokemon):
 def main():
    
     print("=================================================================.")
-    print("Test Case 1: Create a Pokemon.")
+    print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
     pokemon_1 = PokemonEarth(1, "Diglett", TipoArma.CABEZAZO, 100, 8, 15)
 
