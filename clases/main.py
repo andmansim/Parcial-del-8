@@ -1,6 +1,6 @@
 import csv
 from pokemon import Pokemon
-from weapon_type import TipoArma
+from tipo_arma import TipoArma
 
 def get_data_from_user(nombre):
    a1 = TipoArma.CABEZAZO
@@ -51,14 +51,14 @@ def coach_is_undefeated(list_of_pokemons):
 
 def main():
 
-   print("Welcome to the Game.")
-   print("Let's start to set the configuration of each game user. \n")
+   print("Bienvenido al juego.")
+   print("Vamos a empezar poniendo la configuración de cada jugador. \n")
 
    jugador1 = get_data_from_user('jugador1.csv')
    jugador2 = get_data_from_user('jugador2.csv')
 
    print("------------------------------------------------------------------")
-   print("The Game starts...")
+   print("Empieza el juego...")
    print("------------------------------------------------------------------")
    q = True
   # Main loop.
@@ -84,18 +84,18 @@ def main():
    
  
    print("------------------------------------------------------------------")
-   print("The Game has end...")
+   print("El juego ha terminado...")
    print("------------------------------------------------------------------")
 
 
    print("------------------------------------------------------------------")
-   print("Statistics")
+   print("Estadísticas")
    print("------------------------------------------------------------------")
-   print("Game User 1:")
+   print("Jugador 1:")
    for e in range(len(jugador1)):
       print('Pokemons del jugador 1: ' + jugador1[e].nombre + ' tiene ' + str(jugador1[e].vida) + ' de vida')
 
-   print("Game User 2:")
+   print("Jugador 2:")
    for r in range(len(jugador1)):
           print('Pokemons del jugador 2: ' + jugador2[r].nombre + ' tiene ' + str(jugador2[r].vida) + ' de vida')
 
