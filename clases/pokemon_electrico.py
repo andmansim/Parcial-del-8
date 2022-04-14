@@ -32,12 +32,12 @@ def main():
     pokemon_1 = PokemonElectricity(1, "Pikachu", TipoArma.CABEZAZO, 100, 8, 7)
 
     if pokemon_1.get_nombre() == "Pikachu":
-        print("Has pasado el test. El parámetro pokemon_nombre se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_arma().name == "CABEZAZO":
-        print("Has pasado el test. El parámetro pokemon_arma se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_arma.nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 

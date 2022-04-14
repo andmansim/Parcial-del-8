@@ -109,27 +109,27 @@ def main():
     pokemon_1 = Pokemon(1, "Ivysaur", TipoArma.CABEZAZO, 100, 8, 9)
 
     if pokemon_1.get_nombre() == "Ivysaur":
-        print("Has pasado el test. El parámetro pokemon_nombre se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_arma().name == "CABEZAZO":
-        print("Has pasado el test. El parámetro tipo_arma se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_arma.nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_salud() == 100:
-        print("Has pasado el test. El parámetro health_points se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_salud se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_ataque() == 8:
-        print("Has pasado el test. El parámetro attack_rating se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_ataque se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_defensa() == 9:
-        print("Has pasado el test. El parámetro defense_rating se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_defensa se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 

@@ -18,12 +18,12 @@ def main():
     pokemon_1 = PokemonEarth(1, "Diglett", TipoArma.CABEZAZO, 100, 8, 15)
 
     if pokemon_1.get_nombre() == "Diglett":
-        print("Has pasado el test. El parámetro pokemon_nombre se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
     if pokemon_1.get_arma().name == "CABEZAZO":
-        print("Has pasado el test. El parámetro tipo_arma se ha puesto correctamente.")
+        print("Has pasado el test. El parámetro get_arma.nombre se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
