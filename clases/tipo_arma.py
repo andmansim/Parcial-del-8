@@ -32,7 +32,7 @@ def main():
         print("Has suspendido el test. Revisa el método __init__().")
 
     if isinstance(TipoArma.CABEZAZO, TipoArma):
-        print("Has pasado el test. La enumeración de Head Butt se ha puesto correctamente.")
+        print("Has pasado el test. La enumeración de CABEZAZO se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
@@ -56,7 +56,7 @@ def main():
         print("Has suspendido el test. Revisa el método __init__().")
 
     if TipoArma.CABEZAZO.value == 10:
-        print("Has pasado el test. La enumeración de Head Butt se ha puesto correctamente.")
+        print("Has pasado el test. La enumeración de CABEZAZO se ha puesto correctamente.")
     else:
         print("Has suspendido el test. Revisa el método __init__().")
 
@@ -65,5 +65,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# EOF
