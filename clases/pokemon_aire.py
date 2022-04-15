@@ -3,6 +3,17 @@ import random
 from tipo_arma import TipoArma
 
 class PokemonAir(Pokemon):
+    '''
+    Hereda de la clase Pokemon y le modificamos su ataque.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    @method defensa_pokemon: dependiendo del número el ataque tendrá más efecto o ninguno.
+    '''
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, defensa)
     
@@ -21,7 +32,11 @@ class PokemonAir(Pokemon):
 
     
 def main():
-   
+    '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
 
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
