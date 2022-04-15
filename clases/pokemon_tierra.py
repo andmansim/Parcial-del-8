@@ -3,7 +3,7 @@ from tipo_arma import TipoArma
 
 class PokemonEarth(Pokemon):
     '''
-    Hereda de la clase Pokemon y le modificamos su ataque.
+    Hereda de la clase Pokemon.
     @attributes ID: int, identificación del pokemon.
     @attributes nombre: str, nombre del pokemon.
     @attributes arma: enum, tipo de arma del pokemon.

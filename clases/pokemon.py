@@ -2,6 +2,26 @@ from tipo_arma import TipoArma
 #from pokemon import Pokemon
 
 class Pokemon():
+    '''
+    Comprueba los valores, además de contener los métodos principales del juego.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase.
+    @method __del__: destructor de la lista de ID.
+    @method get_nombre: nos devuelve el nombre del pokemon.
+    @method get_defensa: nos devuelve la defensa del pokemon.
+    @method get_ataque: nos devuelve el ataque del pokemon.
+    @method get_salud: nos devuelve la vida del pokemon.
+    @method get_arma: nos devuelve el nombre del arma del pokemon.
+    @method estas_vivo: nos mira si el pokemon está vivo o no y nos devuelve un booleano.
+    @method descripcion_pokemon: nos printea la descripción del pokemon.
+    @method defensa_pokemon: nos mira si el pokemon es capaz de defenderse o no, nos devuelve un booleano.
+    @method ataque_pokemon: un pokemon ataca a otro, quitándole vida dependiendo de su defensa y nos devuelve un booleano.
+    '''
     __lista_ID = []
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         self.ID = ID
@@ -102,6 +122,11 @@ class Pokemon():
     
 
 def main():
+    '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
     
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
