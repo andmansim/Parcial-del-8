@@ -2,7 +2,17 @@ from pokemon import Pokemon
 from tipo_arma import TipoArma
 
 class PokemonEarth(Pokemon):
-   def __init__(self, ID, nombre, arma, vida, ataque, defensa):
+    '''
+    Hereda de la clase Pokemon y le modificamos su ataque.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    '''
+    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, 10)
         if 11 <= int(defensa) <= 20:
             self.defensa = defensa
@@ -11,6 +21,11 @@ class PokemonEarth(Pokemon):
             raise TypeError('La defensa tiene que ser un integrer y estar entre 11 y 20')
 
 def main():
+    '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
    
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
