@@ -3,6 +3,11 @@ from pokemon import Pokemon
 from tipo_arma import TipoArma
 
 def get_data_from_user(nombre):
+   '''
+   Lee los ficheros csv y crea una lista de objetos.
+   @param nombre: el nombre del fichero csv
+   @return: lista de objetos
+   '''
    a1 = TipoArma.CABEZAZO
    list_p = []
    with open(nombre, 'r') as file:
@@ -26,6 +31,12 @@ def get_data_from_user(nombre):
         
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
+   '''
+   Presenta al jugador sus pokemons, donde lo elije y comprueba si está vivo.
+   @param coach_to_ask: número del jugador
+   @param list_of_pokemon: lista de los pokemon de cada jugador
+   @return: el objeto
+   '''
    print('Jugador ' + str(coach_to_ask) + ' estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
    while usuario != list_of_pokemons[0].nombre and usuario != list_of_pokemons[1].nombre and usuario != list_of_pokemons[2].nombre:
@@ -43,6 +54,11 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
                return po 
 
 def coach_is_undefeated(list_of_pokemons):
+   '''
+   Mira cada objeto de la lista y comprueba si los pokemons están vivos.
+   @param list_of_pokemons: lista de los pokemons de cada jugador
+   @return: booleano
+   '''
    muertos = True
    for j in range(len(list_of_pokemons)):
          if Pokemon.estas_vivo(list_of_pokemons[j]) == True:
@@ -50,6 +66,11 @@ def coach_is_undefeated(list_of_pokemons):
    return muertos
 
 def main():
+   '''
+   Presenta la información del juego, hacen que luchen los pokemons y al final nos printea las estadísticas.
+   @param: None
+   @return: None
+   '''
 
    print("Bienvenido al juego.")
    print("Vamos a empezar poniendo la configuración de cada jugador. \n")
