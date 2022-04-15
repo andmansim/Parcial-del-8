@@ -13,6 +13,11 @@ from pokemon import Pokemon
 from tipo_arma import TipoArma
 
 def get_data_from_user(nombre):
+   '''
+   Lee los ficheros csv y crea una lista de objetos.
+   @param nombre: el nombre del fichero csv
+   @return: lista de objetos
+   '''
    a1 = TipoArma.CABEZAZO
    list_p = []
    with open(nombre, 'r') as file:
@@ -36,6 +41,12 @@ def get_data_from_user(nombre):
         
 
 def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
+   '''
+   Presenta al jugador sus pokemons, donde lo elije y comprueba si está vivo.
+   @param coach_to_ask: número del jugador
+   @param list_of_pokemon: lista de los pokemon de cada jugador
+   @return: el objeto
+   '''
    print('Jugador ' + str(coach_to_ask) + ' estos son tus pokemons, elija uno para luchar: '+ list_of_pokemons[0].nombre + ', ' + list_of_pokemons[1].nombre + ', ' + list_of_pokemons[2].nombre)
    usuario = input()
    while usuario != list_of_pokemons[0].nombre and usuario != list_of_pokemons[1].nombre and usuario != list_of_pokemons[2].nombre:
@@ -53,6 +64,11 @@ def get_pokemon_in_a_list_of_pokemons(coach_to_ask, list_of_pokemons):
                return po 
 
 def coach_is_undefeated(list_of_pokemons):
+   '''
+   Mira cada objeto de la lista y comprueba si los pokemons están vivos.
+   @param list_of_pokemons: lista de los pokemons de cada jugador
+   @return: booleano
+   '''
    muertos = True
    for j in range(len(list_of_pokemons)):
          if Pokemon.estas_vivo(list_of_pokemons[j]) == True:
@@ -60,6 +76,11 @@ def coach_is_undefeated(list_of_pokemons):
    return muertos
 
 def main():
+   '''
+   Presenta la información del juego, hacen que luchen los pokemons y al final nos printea las estadísticas.
+   @param: None
+   @return: None
+   '''
 
    print("Bienvenido al juego.")
    print("Vamos a empezar poniendo la configuración de cada jugador. \n")
@@ -121,6 +142,26 @@ from tipo_arma import TipoArma
 #from pokemon import Pokemon
 
 class Pokemon():
+    '''
+    Comprueba los valores, además de contener los métodos principales del juego.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase.
+    @method __del__: destructor de la lista de ID.
+    @method get_nombre: nos devuelve el nombre del pokemon.
+    @method get_defensa: nos devuelve la defensa del pokemon.
+    @method get_ataque: nos devuelve el ataque del pokemon.
+    @method get_salud: nos devuelve la vida del pokemon.
+    @method get_arma: nos devuelve el nombre del arma del pokemon.
+    @method estas_vivo: nos mira si el pokemon está vivo o no y nos devuelve un booleano.
+    @method descripcion_pokemon: nos printea la descripción del pokemon.
+    @method defensa_pokemon: nos mira si el pokemon es capaz de defenderse o no, nos devuelve un booleano.
+    @method ataque_pokemon: un pokemon ataca a otro, quitándole vida dependiendo de su defensa y nos devuelve un booleano.
+    '''
     __lista_ID = []
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         self.ID = ID
@@ -221,7 +262,11 @@ class Pokemon():
     
 
 def main():
-    
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
@@ -328,6 +373,17 @@ import random
 from tipo_arma import TipoArma
 
 class PokemonAir(Pokemon):
+     '''
+    Hereda de la clase Pokemon y le modificamos su defensa.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    @method defensa_pokemon: dependiendo del número el ataque tendrá más efecto o ninguno.
+    '''
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, defensa)
     
@@ -347,7 +403,11 @@ class PokemonAir(Pokemon):
     
 def main():
    
-
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
@@ -465,6 +525,16 @@ from pokemon import Pokemon
 from tipo_arma import TipoArma
 
 class PokemonEarth(Pokemon):
+   '''
+    Hereda de la clase Pokemon.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    '''
    def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, ataque, 10)
         if 11 <= int(defensa) <= 20:
@@ -475,7 +545,11 @@ class PokemonEarth(Pokemon):
 
 def main():
    
-    print("=================================================================.")
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''   print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
     pokemon_1 = PokemonEarth(1, "Diglett", TipoArma.CABEZAZO, 100, 8, 15)
@@ -577,6 +651,16 @@ if __name__ == "__main__":
 from pokemon import Pokemon
 from tipo_arma import TipoArma
 class PokemonWater(Pokemon):
+    '''
+    Hereda de la clase Pokemon.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    '''
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, 10, defensa)
         if 11 <= int(ataque) <= 20:
@@ -587,7 +671,11 @@ class PokemonWater(Pokemon):
 
 def main():
  
-    print("=================================================================.")
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''   print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
     pokemon_1 = PokemonWater(1, "Squirtle", TipoArma.CABEZAZO, 100, 12, 8)
@@ -691,6 +779,17 @@ import random
 from tipo_arma import TipoArma
 
 class PokemonElectricity(Pokemon):
+    '''
+    Hereda de la clase Pokemon y le modificamos su ataque.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase.
+    @method ataque_pokemon: dependiendo del número el ataque será más efectivo o no.
+    '''
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
        super().__init__(ID, nombre, arma, vida, ataque, defensa)
        
@@ -714,7 +813,11 @@ class PokemonElectricity(Pokemon):
 
 def main():
     
-    print("=================================================================.")
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''   print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
     print("=================================================================.")
     pokemon_1 = PokemonElectricity(1, "Pikachu", TipoArma.CABEZAZO, 100, 8, 7)
@@ -826,6 +929,9 @@ if __name__ == "__main__":
 ```
 from enum import Enum
 class TipoArma(Enum):
+    '''
+    Es una enumeración de los distintos tipos de armas que tienen los pokemons.
+    '''
     #Valor de ataque
     PUÑETAZO = 2
     CABEZAZO = 10
@@ -837,7 +943,11 @@ class TipoArma(Enum):
 
 def main():
     
-    print("=================================================================.")
+ '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''   print("=================================================================.")
     print("Test Caso 1: Revisar la clase TipoArma - Nombre.")
     print("=================================================================.")
 
