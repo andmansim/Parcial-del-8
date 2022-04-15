@@ -1,6 +1,16 @@
 from pokemon import Pokemon
 from tipo_arma import TipoArma
 class PokemonWater(Pokemon):
+    '''
+    Hereda de la clase Pokemon y le modificamos su ataque.
+    @attributes ID: int, identificación del pokemon.
+    @attributes nombre: str, nombre del pokemon.
+    @attributes arma: enum, tipo de arma del pokemon.
+    @attributes vida: int, vida del pokemon.
+    @attributes ataque: int, ataque del pokemon.
+    @attributes defensa: int, defensa del pokemon.
+    @method __init__: constructor de la clase
+    '''
     def __init__(self, ID, nombre, arma, vida, ataque, defensa):
         super().__init__(ID, nombre, arma, vida, 10, defensa)
         if 11 <= int(ataque) <= 20:
@@ -10,6 +20,11 @@ class PokemonWater(Pokemon):
             raise TypeError ('El ataque tiene que ser un integrer y estar entre 1 y 10')
 
 def main():
+    '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
  
     print("=================================================================.")
     print("Test Caso 1: Crear un pokemon.")
