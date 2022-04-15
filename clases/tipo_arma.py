@@ -1,6 +1,9 @@
 
 from enum import Enum
 class TipoArma(Enum):
+    '''
+    Es una enumeración de los distintos tipos de armas que tienen los pokemons.
+    '''
     #Valor de ataque
     PUÑETAZO = 2
     CABEZAZO = 10
@@ -11,7 +14,11 @@ class TipoArma(Enum):
 
 
 def main():
-    
+    '''
+   Comprueba que esté bien la programación de la clase.
+   @param: None
+   @return: None
+   '''
     print("=================================================================.")
     print("Test Caso 1: Revisar la clase TipoArma - Nombre.")
     print("=================================================================.")
