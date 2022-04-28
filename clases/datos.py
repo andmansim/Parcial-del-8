@@ -31,7 +31,8 @@ def calculoMediana(df_new):
 
         return [mediana, rango]
     
-    # Moda
+# Moda
 def calculoModa(df_new):
     moda = Counter(df_new)
     return moda
+

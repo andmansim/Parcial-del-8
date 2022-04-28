@@ -30,9 +30,14 @@ print('La mediana es: ' + str(mediana[0]))
 moda = calculoModa(df_new['HP'])
 print('La moda es: ' + str(moda))
 print('La moda es el valor que más repite, será el que se encuentra en la primera posición del diccionario que aparece en pantalla.')
+
 #Máximo
+maximo = df_new['HP'].max()
+print('El valor máximo es: ' + str(maximo))
 
 #Mínimo
+minimo = df_new['HP']. min()
+print('El valor mínimo es: ' + str(minimo))
 
 #Varianza
 
