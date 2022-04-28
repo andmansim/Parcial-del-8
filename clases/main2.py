@@ -41,18 +41,16 @@ print('El valor mínimo es: ' + str(minimo))
 
 #Varianza
 varianza = calculoVarianzaDesviacionTipica(df_new['HP'], media)
-print('La varianza es: ' + str(varianza[0]))
+print('La varianza es: ' + str(round(varianza[0], 2)))
 #Desviación típica
-print('La desviación típica es: ' + str(varianza[1]))
-
-
+print('La desviación típica es: ' + str(round(varianza[1], 2)))
 
 #Cuartiles
-
+q = calculoDelosCuartiles(df_new['HP'], mediana[0], mediana[1] )
 #Q1(Cuartil 1)
-
+print('El 25% de los datos son iguales o menores a: ' + str(q[0]))
 #Q2(Cuartil 2)
-
+print('El 50% de los datos son iguales o menores a: ' + str(q[1]))
 #Q3(Cuartil 3)
-
+print('El 75% de los datos son iguales o menores a: ' + str(q[2]))
 #Histograma
