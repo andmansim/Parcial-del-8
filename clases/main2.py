@@ -48,19 +48,17 @@ print('La desviación típica es: ' + str(round(varianza[1], 2)))
 #Cuartiles
 q = calculoDelosCuartiles(df_new['Attack'], mediana[0], mediana[1] )
 #Q1(Cuartil 1)
-print('El 25% de los datos son iguales o menores a: ' + str(q[0]))
+print('El 25% de los datos son iguales o menores a: ' + str(q[2]))
 #Q2(Cuartil 2)
 print('El 50% de los datos son iguales o menores a: ' + str(q[1]))
 #Q3(Cuartil 3)
-print('El 75% de los datos son iguales o menores a: ' + str(q[2]))
+print('El 75% de los datos son iguales o menores a: ' + str(q[0]))
 
 #Valores atípicos
 print("Criterios de Tukey, datos atípicos")
-valoresAberrantes = criterioDeTukey(df_new['Attack'], q[0], q[2])
+valoresAberrantes = criterioDeTukey(df_new['Attack'], q[2], q[0])
 print("Cantidad de valores aberrantes: " + str(len(valoresAberrantes)))
 print("Valores:" + str(valoresAberrantes))
 
 #Histograma
-print(df_new['Attack'].describe())
-
-visualizacion(df_new['Attack'], media, mediana[0], q[0], q[1], q[2])
+visualizacion(df_new['Attack'], media, mediana[0], q[2], q[1], q[0])
