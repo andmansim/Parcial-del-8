@@ -1,6 +1,7 @@
 import csv
 from pokemon import Pokemon
 from tipo_arma import TipoArma
+import pandas as pd
 
 def get_data_from_user(nombre):
    '''
@@ -10,6 +11,8 @@ def get_data_from_user(nombre):
    '''
    a1 = TipoArma.CABEZAZO
    list_p = []
+   df = pd.read_csv('Pokemon.csv', delimiter = ',', enconing = 'UTF-8')
+   
    with open(nombre, 'r') as file:
       leer = csv.reader(file)
       for i in leer:
