@@ -67,10 +67,10 @@ def calculoDelosCuartiles(df_new,mediana,rangoMediana):
         #Cálculo Q1
         restoDivision = rangoMediana%2
         if (restoDivision != 0): #impar
-            q1 = df_new[((rangoMediana/2)+1)-1]
+            q1 = ordenar[((rangoMediana/2)+1)-1]
         else:
-            valorMin = df_new[((rangoMediana/2)-1)]
-            valorMax = df_new[(rangoMediana/2)]
+            valorMin = ordenar[((rangoMediana/2)-1)]
+            valorMax = ordenar[(rangoMediana/2)]
             q1 = (valorMin + ((valorMax - valorMin) / 2) + valorMax) / 2
 
         # Cálculo Q3
@@ -78,10 +78,10 @@ def calculoDelosCuartiles(df_new,mediana,rangoMediana):
         nbDatosDesdeMediana = nbdatos - rangoMediana
         restoDivision = nbDatosDesdeMediana % 2
         if (restoDivision != 0): #impar
-            q3 = df_new[(rangoMediana+ceil(nbDatosDesdeMediana/2))-1]
+            q3 = ordenar[(rangoMediana+ceil(nbDatosDesdeMediana/2))-1]
         else:
-            valorMinQ3 = df_new[(rangoMediana+(nbDatosDesdeMediana/2))-1]
-            valorMaxQ3 = df_new[(rangoMediana+(nbDatosDesdeMediana/2))]
+            valorMinQ3 = ordenar[(rangoMediana+(nbDatosDesdeMediana/2))-1]
+            valorMaxQ3 = ordenar[(rangoMediana+(nbDatosDesdeMediana/2))]
             q3 = (valorMinQ3 + ((valorMaxQ3 - valorMinQ3) / 2) + valorMaxQ3) / 2
 
 
