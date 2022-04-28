@@ -22,7 +22,8 @@ media = round(media, 2)
 print('La media es: ' + str(media) )
 
 #Mediana
-
+mediana = calculoMediana(df_new['HP'])
+print('La mediana es:' + str(mediana[0]))
 #Moda
 
 #Máximo
