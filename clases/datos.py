@@ -1,6 +1,7 @@
 # Vamos a analizar el DataSet estadísticamente
 from collections import Counter
 from math import*
+import matplotlib.pyplot as plt
 #Media
 def calculomedia(vida):
     m = vida.sum()/vida.count()
@@ -85,3 +86,31 @@ def calculoDelosCuartiles(df_new,mediana,rangoMediana):
 
 
         return ([q1, q2, q3])
+    
+#Histogramas
+def visualizacion(df_new,media,mediana,cuartil_1,cuartil_2,cuartil_3):
+    
+        plt.subplot(2, 2, 1)
+        plt.hist(df_new)
+        plt.title("Histograma y media")
+        plt.axvline(media, color='red', linestyle='dashed', linewidth=1,label = str(media))
+        plt.legend(loc='upper right')
+
+        plt.subplot(2, 2, 2)
+        plt.hist(df_new)
+        plt.title("Histograma y mediana")
+        plt.axvline(mediana, color='green', linestyle='dashed', linewidth=1,label = str(mediana))
+        plt.legend(loc='upper right')
+
+        plt.subplot(2, 2, 3)
+        plt.hist(df_new)
+        plt.title("Histograma y cuartiles")
+        plt.axvline(cuartil_1, color='orange', linestyle='dashed', linewidth=1,label = "Q1: "+str(cuartil_1))
+        plt.axvline(cuartil_2, color='orange', linestyle='dashed', linewidth=1,label = "Q2: "+str(cuartil_2))
+        plt.axvline(cuartil_3, color='orange', linestyle='dashed', linewidth=1,label = "Q3: "+str(cuartil_3))
+        plt.legend(loc='upper right')
+
+        plt.subplot(2, 2, 4)
+        plt.boxplot(df_new)
+        plt.title("Diagrama de caja y bigotes")
+        plt.show()

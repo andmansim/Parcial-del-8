@@ -54,3 +54,6 @@ print('El 50% de los datos son iguales o menores a: ' + str(q[1]))
 #Q3(Cuartil 3)
 print('El 75% de los datos son iguales o menores a: ' + str(q[2]))
 #Histograma
+print(df_new['HP'].describe())
+
+visualizacion(df_new['HP'], media, mediana[0], q[0], q[1], q[2])
