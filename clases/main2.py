@@ -1,5 +1,6 @@
 # Main probisional para abrir y modificar el csv
 import pandas as pd
+from datos import*
 
 #Abrimos csv
 df = pd.read_csv('Pokemon.csv', delimiter = ',')
@@ -13,3 +14,8 @@ print (df_new)
 tipo_ataque = pd.Series(data = ['CABEZAZO', 'CODAZO', 'PATADA', 'PUÑETAZO'], index=df_new.columns, name='Tipo-Arma')
 df_new.append(tipo_ataque)
 print(df_new)'''
+
+print('------------DATOS ESTADÍSTICOS DE LA VARIABLE VIDA-------------')
+media = calculomedia(df_new['HP'])
+media = round(media, 2)
+print('La media es: ' + str(media) )
