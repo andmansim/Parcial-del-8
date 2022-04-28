@@ -9,7 +9,7 @@ print(df)
 df_new = pd.DataFrame({'#': df['#'], 'Name': df['Name'], 'HP': df['HP'], 'Attack': df['Attack'], 'Defense': df['Defense']})
 print (df_new)
 
-#añadir una nueva columna
+'''#añadir una nueva columna
 tipo_ataque = pd.Series(data = ['CABEZAZO', 'CODAZO', 'PATADA', 'PUÑETAZO'], index=df_new.columns, name='Tipo-Arma')
 df_new.append(tipo_ataque)
-print(df_new)
+print(df_new)'''
