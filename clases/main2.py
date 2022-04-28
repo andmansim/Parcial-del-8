@@ -16,6 +16,29 @@ df_new.append(tipo_ataque)
 print(df_new)'''
 
 print('------------DATOS ESTADÍSTICOS DE LA VARIABLE VIDA-------------')
+# Media
 media = calculomedia(df_new['HP'])
 media = round(media, 2)
 print('La media es: ' + str(media) )
+
+#Mediana
+
+#Moda
+
+#Máximo
+
+#Mínimo
+
+#Varianza
+
+#Desviación típica
+
+#Cuartiles
+
+#Q1(Cuartil 1)
+
+#Q2(Cuartil 2)
+
+#Q3(Cuartil 3)
+
+#Histograma
