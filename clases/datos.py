@@ -1,5 +1,5 @@
 # Vamos a analizar el DataSet estadísticamente
-
+from collections import Counter
 #Media
 def calculomedia(vida):
     m = vida.sum()/vida.count()
@@ -30,3 +30,8 @@ def calculoMediana(df_new):
             mediana = df_new[rangoPython]
 
         return [mediana, rango]
+    
+    # Moda
+def calculoModa(self):
+    moda = Counter(self.caracteristica)
+    return moda
