@@ -56,7 +56,7 @@ print('El 75% de los datos son iguales o menores a: ' + str(q[2]))
 
 #Valores atípicos
 print("Criterios de Tukey, datos atípicos")
-valoresAberrantes = criterioDeTukey(q[0], q[2])
+valoresAberrantes = criterioDeTukey(df_new['HP'], q[0], q[2])
 print("Cantidad de valores aberrantes: " + str(len(valoresAberrantes)))
 print("Valores:" + str(valoresAberrantes))
 
