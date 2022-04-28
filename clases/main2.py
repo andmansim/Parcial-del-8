@@ -2,6 +2,7 @@
 import pandas as pd
 from datos import*
 
+
 #Abrimos csv
 df = pd.read_csv('Pokemon.csv', delimiter = ',')
 print(df)
@@ -28,6 +29,7 @@ print('La mediana es: ' + str(mediana[0]))
 #Moda
 moda = calculoModa(df_new['HP'])
 print('La moda es: ' + str(moda))
+print('La moda es el valor que más repite, será el que se encuentra en la primera posición del diccionario que aparece en pantalla.')
 #Máximo
 
 #Mínimo
