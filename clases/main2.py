@@ -26,7 +26,8 @@ mediana = calculoMediana(df_new['HP'])
 print('La mediana es: ' + str(mediana[0]))
 
 #Moda
-
+moda = calculoModa(df_new['HP'])
+print('La moda es: ' + str(moda))
 #Máximo
 
 #Mínimo
