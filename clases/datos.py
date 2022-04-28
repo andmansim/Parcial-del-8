@@ -86,7 +86,29 @@ def calculoDelosCuartiles(df_new,mediana,rangoMediana):
 
 
         return ([q1, q2, q3])
+
+#Sacar valores atípicos
+def criterioDeTukey(df_new, primerCuartil, tercerCuartil):
     
+    valoresAberrantesInferiores = []
+    valoresAberrantesSuperiores = []
+    ordenar = df_new.sort_values()
+    intercuartil = tercerCuartil - primerCuartil
+    print("Inter-cuartil = "+str(intercuartil))
+    limiteInferior = primerCuartil - (1.5 * intercuartil)
+    limiteSuperior = tercerCuartil + (1.5 * intercuartil)
+
+    for valorObservacion in ordenar:
+        if valorObservacion < limiteInferior:
+            valoresAberrantesInferiores.append(valorObservacion)
+
+        if valorObservacion > limiteSuperior:
+            valoresAberrantesSuperiores.append(valorObservacion)
+
+    valoresAberrantes = valoresAberrantesInferiores + valoresAberrantesSuperiores
+
+    return (valoresAberrantes)
+ 
 #Histogramas
 def visualizacion(df_new,media,mediana,cuartil_1,cuartil_2,cuartil_3):
     

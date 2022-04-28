@@ -53,6 +53,13 @@ print('El 25% de los datos son iguales o menores a: ' + str(q[0]))
 print('El 50% de los datos son iguales o menores a: ' + str(q[1]))
 #Q3(Cuartil 3)
 print('El 75% de los datos son iguales o menores a: ' + str(q[2]))
+
+#Valores atípicos
+print("Criterios de Tukey, datos atípicos")
+valoresAberrantes = criterioDeTukey(q[0], q[2])
+print("Cantidad de valores aberrantes: " + str(len(valoresAberrantes)))
+print("Valores:" + str(valoresAberrantes))
+
 #Histograma
 print(df_new['HP'].describe())
 
