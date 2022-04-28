@@ -36,12 +36,16 @@ maximo = df_new['HP'].max()
 print('El valor máximo es: ' + str(maximo))
 
 #Mínimo
-minimo = df_new['HP']. min()
+minimo = df_new['HP'].min()
 print('El valor mínimo es: ' + str(minimo))
 
 #Varianza
-
+varianza = calculoVarianzaDesviacionTipica(df_new['HP'], media)
+print('La varianza es: ' + str(varianza[0]))
 #Desviación típica
+print('La desviación típica es: ' + str(varianza[1]))
+
+
 
 #Cuartiles
 
